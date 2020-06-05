@@ -103,12 +103,6 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem">
                 <Link to="/tags">Tags</Link>
               </li>
-              <li role="menuitem">
-                <Link to="/projects">Projects</Link>
-              </li>
-              <li role="menuitem">
-                <Link to="/projects/msc">MSc research</Link>
-              </li>
             </ul>
             {isPost && (
               <NavPostTitle ref={this.titleRef} className="nav-post-title">
