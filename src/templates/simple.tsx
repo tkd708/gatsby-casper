@@ -1,4 +1,3 @@
-import { format } from 'date-fns';
 import { graphql, Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import * as _ from 'lodash';
@@ -12,14 +11,11 @@ import styled from '@emotion/styled';
 import { Footer } from '../components/Footer';
 import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import PostContent from '../components/PostContent';
-import { ReadNext } from '../components/ReadNext';
-//import { Subscribe } from '../components/subscribe/Subscribe';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
-import { AuthorList } from '../components/AuthorList';
 
 export interface Author {
   id: string;
@@ -112,12 +108,6 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
     height = String(Number(width) / post.frontmatter.image.childImageSharp.fluid.aspectRatio);
   }
 
-  const date = new Date(post.frontmatter.date);
-  // 2018-08-20
-  const datetime = format(date, 'yyyy-MM-dd');
-  // 20 AUG 2018
-  const displayDatetime = format(date, 'dd LLL yyyy');
-
   return (
     <IndexLayout className="post-template">
       <Helmet>
@@ -198,28 +188,6 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                 <PostFullCustomExcerpt className="post-full-custom-excerpt">
                   {post.frontmatter.excerpt}
                 </PostFullCustomExcerpt>
-                <PostFullByline className="post-full-byline">
-                  <section className="post-full-byline-content">
-                    <AuthorList authors={post.frontmatter.author} tooltip="large" />
-                    <section className="post-full-byline-meta">
-                      <h4 className="author-name">
-                        {post.frontmatter.author.map(author => (
-                          <Link key={author.id} to={`/author/${_.kebabCase(author.id)}/`}>
-                            {author.id}
-                          </Link>
-                        ))}
-                      </h4>
-                      <div className="byline-meta-content">
-                        <time className="byline-meta-date" dateTime={datetime}>
-                          {displayDatetime}
-                        </time>
-                        <span className="byline-reading-time">
-                          {/* <span className="bull">&bull;</span>  20 min to read */}
-                        </span>
-                      </div>
-                    </section>
-                  </section>
-                </PostFullByline>
               </PostFullHeader>
 
               {post.frontmatter.image && post.frontmatter.image.childImageSharp && (
@@ -232,21 +200,9 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
                 </PostFullImage>
               )}
               <PostContent htmlAst={post.htmlAst} />
-
-              {/* The big email subscribe modal content 
-              {config.showSubscribe && <Subscribe title={config.title} />}
-              */}
             </article>
           </div>
         </main>
-
-        <ReadNext
-          currentPageSlug={props.pathContext.slug}
-          tags={post.frontmatter.tags}
-          relatedPosts={props.data.relatedPosts}
-          pageContext={props.pageContext}
-        />
-
         <Footer />
       </Wrapper>
     </IndexLayout>
@@ -333,72 +289,6 @@ const PostFullCustomExcerpt = styled.p`
   @media (prefers-color-scheme: dark) {
     /* color: color(var(--midgrey) l(+10%)); */
     color: ${lighten('0.1', colors.midgrey)};
-  }
-`;
-
-const PostFullByline = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 35px 0 0;
-  padding-top: 15px;
-  /* border-top: 1px solid color(var(--lightgrey) l(+10%)); */
-  border-top: 1px solid ${lighten('0.1', colors.lightgrey)};
-
-  .post-full-byline-content {
-    flex-grow: 1;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .post-full-byline-content .author-list {
-    justify-content: flex-start;
-    padding: 0 12px 0 0;
-  }
-
-  .post-full-byline-meta {
-    margin: 2px 0 0;
-    /* color: color(var(--midgrey) l(+10%)); */
-    color: ${lighten('0.1', colors.midgrey)};
-    font-size: 1.2rem;
-    line-height: 1.2em;
-    letter-spacing: 0.2px;
-    text-transform: uppercase;
-  }
-
-  .post-full-byline-meta h4 {
-    margin: 0 0 3px;
-    font-size: 1.3rem;
-    line-height: 1.4em;
-    font-weight: 500;
-  }
-
-  .post-full-byline-meta h4 a {
-    /* color: color(var(--darkgrey) l(+10%)); */
-    color: ${lighten('0.1', colors.darkgrey)};
-  }
-
-  .post-full-byline-meta h4 a:hover {
-    /* color: var(--darkgrey); */
-    color: ${colors.darkgrey};
-  }
-
-  .post-full-byline-meta .bull {
-    display: inline-block;
-    margin: 0 4px;
-    opacity: 0.6;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    /* border-top-color: color(var(--darkmode) l(+15%)); */
-    border-top-color: ${lighten('0.15', colors.darkmode)};
-
-    .post-full-byline-meta h4 a {
-      color: rgba(255, 255, 255, 0.75);
-    }
-
-    .post-full-byline-meta h4 a:hover {
-      color: #fff;
-    }
   }
 `;
 

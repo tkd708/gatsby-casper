@@ -7,7 +7,6 @@ import { css } from '@emotion/core';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
-import Pagination from '../components/Pagination';
 import { PostCard } from '../components/PostCard';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
@@ -24,7 +23,7 @@ import {
   SiteHeaderStyles,
 } from '../styles/shared';
 import config from '../website-config';
-import { PageContext } from './post';
+import { PageContext } from '../templates/post';
 
 export interface IndexProps {
   pageContext: {
@@ -50,7 +49,7 @@ export interface IndexProps {
   };
 }
 
-const IndexPage: React.FC<IndexProps> = props => {
+const SoftwarePage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
 
   return (
@@ -92,13 +91,13 @@ const IndexPage: React.FC<IndexProps> = props => {
       <Wrapper>
         <div
           css={[outer, SiteHeader, SiteHeaderStyles]}
-          className="site-header-background"
+          className="site-header"
           style={{
             backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
           }}
         >
           <div css={inner}>
-            <SiteNav isHome />
+            <SiteNav isHome={false} />
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
                 {props.data.logo ? (
@@ -121,33 +120,28 @@ const IndexPage: React.FC<IndexProps> = props => {
               <h1>What about inserting contents here</h1>
             </div>
             <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges.map((post, index) => {
-                // filter out drafts in production
-                return (
-                  (post.node.frontmatter.draft !== true ||
-                    process.env.NODE_ENV !== 'production') && (
-                    <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
-                  )
-                );
-              })}
+              {props.data.allMarkdownRemark.edges
+                .filter(edge => edge.node.frontmatter.tags[0] === 'Software')
+                .map((post, index) => {
+                  // filter out drafts in production
+                  return (
+                    (post.node.frontmatter.draft !== true ||
+                      process.env.NODE_ENV !== 'production') && (
+                      <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
+                    )
+                  );
+                })}
             </div>
           </div>
         </main>
-        {props.children}
-        {props.pageContext.numPages > 1 && (
-          <Pagination
-            currentPage={props.pageContext.currentPage}
-            numPages={props.pageContext.numPages}
-          />
-        )}
         <Footer />
       </Wrapper>
     </IndexLayout>
   );
 };
 
-export const pageQuery = graphql`
-  query blogPageQuery($skip: Int!, $limit: Int!) {
+export const softwarePageQuery = graphql`
+  query softwarePageQuery {
     logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
@@ -169,8 +163,6 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
-      limit: $limit
-      skip: $skip
     ) {
       edges {
         node {
@@ -271,4 +263,4 @@ const HomePosts = css`
   }
 `;
 
-export default IndexPage;
+export default SoftwarePage;
