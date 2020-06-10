@@ -51,15 +51,12 @@ const About: React.FC = () => (
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">About</PostFullTitle>
+              <PostFullTitle className="post-full-title">About is about</PostFullTitle>
             </PostFullHeader>
 
             <PostFullContent className="post-full-content">
               <div className="post-content">
-                <h5>
-                  The portfolio website of Naoya Takeda <br /> GitHub:{' '}
-                  <a href="https://github.com/scttcper/gatsby-casper">scttcper/gatsby-casper</a>
-                </h5>
+                <h5>The portfolio website of Naoya Takeda</h5>
                 <p>Making it simpler.</p>
                 <p>I will update this page soon.</p>
                 <p>This page will be about my vision, mission and mid-term goals.</p>

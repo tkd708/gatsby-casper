@@ -6,12 +6,13 @@ import { css } from '@emotion/core';
 
 import { colors } from '../styles/colors';
 import { outer, inner } from '../styles/shared';
-import config from '../website-config';
+//import config from '../website-config';
 
 export const Footer: React.FC = () => {
   return (
     <footer css={[outer, SiteFooter]}>
       <div css={[inner, SiteFooterContent]}>
+        {/* 
         <section className="copyright">
           <Link to="/">{config.title}</Link> &copy; {new Date().getFullYear()}{' '}
           {config.footer && (
@@ -20,8 +21,16 @@ export const Footer: React.FC = () => {
             </Link>
           )}
         </section>
+        */}
         <SiteFooterNav>
-          <Link to="/">Latest Posts</Link>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/research">Research</Link>
+          <Link to="/software">Software</Link>
+          <Link to="/cv">CV</Link>
+          <Link to="/Publication">Publication</Link>
+
+          {/* 
           {config.facebook && (
             <a href={config.facebook} target="_blank" rel="noopener noreferrer">
               Facebook
@@ -38,6 +47,7 @@ export const Footer: React.FC = () => {
           </a>
 
           <a href="/rss.xml">RSS</a>
+          */}
         </SiteFooterNav>
       </div>
     </footer>
@@ -100,4 +110,3 @@ const SiteFooterNav = styled.nav`
     }
   }
 `;
-

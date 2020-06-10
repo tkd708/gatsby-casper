@@ -15,15 +15,14 @@ import {
   outer,
   PostFeed,
   Posts,
-  SiteDescription,
   SiteHeader,
-  SiteHeaderContent,
+  SiteArchiveHeader,
+  SiteNavMain,
   SiteMain,
-  SiteTitle,
-  SiteHeaderStyles,
 } from '../styles/shared';
 import config from '../website-config';
-import { PageContext } from '../templates/post';
+import { NoImage, PostFull, PageContext, PostFullHeader, PostFullTitle } from '../templates/post';
+import { colors } from '../styles/colors';
 
 export interface IndexProps {
   pageContext: {
@@ -88,50 +87,43 @@ const ResearchPage: React.FC<IndexProps> = props => {
         <meta property="og:image:width" content={width.toString()} />
         <meta property="og:image:height" content={height.toString()} />
       </Helmet>
-      <Wrapper>
-        <div
-          css={[outer, SiteHeader, SiteHeaderStyles]}
-          className="site-header"
-          style={{
-            backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
-          }}
-        >
-          <div css={inner}>
-            <SiteNav isHome={false} />
-            <SiteHeaderContent className="site-header-conent">
-              <SiteTitle className="site-title">
-                {props.data.logo ? (
-                  <img
-                    style={{ maxHeight: '55px' }}
-                    src={props.data.logo.childImageSharp.fixed.src}
-                    alt={config.title}
-                  />
-                ) : (
-                  config.title
-                )}
-              </SiteTitle>
-              <SiteDescription>{config.description}</SiteDescription>
-            </SiteHeaderContent>
+      <Wrapper css={PageTemplate}>
+        <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
+          <div css={[outer, SiteNavMain]}>
+            <div css={inner}>
+              <SiteNav isHome={false} />
+            </div>
           </div>
-        </div>
-        <main id="site-main" css={[SiteMain, outer]}>
-          <div css={[inner, Posts]}>
-            <div>
-              <h1>What about inserting contents here</h1>
-            </div>
-            <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges
-                .filter(edge => edge.node.frontmatter.tags[0] === 'Research')
-                .map((post, index) => {
-                  // filter out drafts in production
-                  return (
-                    (post.node.frontmatter.draft !== true ||
-                      process.env.NODE_ENV !== 'production') && (
-                      <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
-                    )
-                  );
-                })}
-            </div>
+        </header>
+        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+          <div css={inner}>
+            <article className="post page" css={[PostFull, NoImage]}>
+              <PostFullHeader className="post-full-header">
+                <PostFullTitle className="post-full-title">Research focuses</PostFullTitle>
+              </PostFullHeader>
+              <div>
+                <h1>Crop management</h1>
+                <h1>Nitrogen Use Efficiency</h1>
+                <h1>Crop models</h1>
+              </div>
+              <div css={[PostFeed]}>
+                {props.data.allMarkdownRemark.edges
+                  .filter(edge => edge.node.frontmatter.tags[0] === 'Research')
+                  .map((post, index) => {
+                    // filter out drafts in production
+                    return (
+                      (post.node.frontmatter.draft !== true ||
+                        process.env.NODE_ENV !== 'production') && (
+                        <PostCard
+                          key={post.node.fields.slug}
+                          post={post.node}
+                          large={index === 0}
+                        />
+                      )
+                    );
+                  })}
+              </div>
+            </article>
           </div>
         </main>
         <Footer />
@@ -201,6 +193,21 @@ export const researchPageQuery = graphql`
           }
         }
       }
+    }
+  }
+`;
+
+const PageTemplate = css`
+  .site-main {
+    margin-top: 64px;
+    padding-bottom: 4vw;
+    background: #fff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .site-main {
+      /* background: var(--darkmode); */
+      background: ${colors.darkmode};
     }
   }
 `;

@@ -97,11 +97,3 @@ draft: false
 - **Spanish** : Upper Intermediate (Diplomas de Español como Lengua Extranjera – DELE B2)
 
 <br>
-
-### SKILLS
-
----
-
-- Environmental measurement: Soil analysis (physical and chemical properties) Field sensors (field water table and soil moisture content) Automated chamber system for greenhouse gas measurement
-- Analytical software : R
-- Crop model : APSIM, Oryza (2000 and V3)

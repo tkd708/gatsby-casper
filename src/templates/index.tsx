@@ -95,6 +95,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           className="site-header-background"
           style={{
             backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
+            height: '700px',
           }}
         >
           <div css={inner}>
@@ -157,7 +158,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    header: file(relativePath: { eq: "img/blog-cover.png" }) {
+    header: file(relativePath: { eq: "img/blog-index.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

@@ -15,15 +15,18 @@ import {
   outer,
   PostFeed,
   Posts,
-  SiteDescription,
   SiteHeader,
   SiteHeaderContent,
-  SiteMain,
-  SiteTitle,
   SiteHeaderStyles,
+  SiteTitle,
+  SiteDescription,
+  SiteArchiveHeader,
+  SiteNavMain,
+  SiteMain,
 } from '../styles/shared';
 import config from '../website-config';
-import { PageContext } from '../templates/post';
+import { NoImage, PostFull, PageContext, PostFullHeader, PostFullTitle } from '../templates/post';
+import { colors } from '../styles/colors';
 
 export interface IndexProps {
   pageContext: {
@@ -88,16 +91,23 @@ const SoftwarePage: React.FC<IndexProps> = props => {
         <meta property="og:image:width" content={width.toString()} />
         <meta property="og:image:height" content={height.toString()} />
       </Helmet>
-      <Wrapper>
+      <Wrapper css={PageTemplate}>
+        <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
+          <div css={[outer, SiteNavMain]}>
+            <div css={inner}>
+              <SiteNav isHome={false} />
+            </div>
+          </div>
+        </header>
         <div
           css={[outer, SiteHeader, SiteHeaderStyles]}
-          className="site-header"
+          className="site-header-background"
           style={{
             backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
+            height: '500px',
           }}
         >
           <div css={inner}>
-            <SiteNav isHome={false} />
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">
                 {props.data.logo ? (
@@ -114,24 +124,52 @@ const SoftwarePage: React.FC<IndexProps> = props => {
             </SiteHeaderContent>
           </div>
         </div>
-        <main id="site-main" css={[SiteMain, outer]}>
-          <div css={[inner, Posts]}>
-            <div>
-              <h1>What about inserting contents here</h1>
-            </div>
-            <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges
-                .filter(edge => edge.node.frontmatter.tags[0] === 'Software')
-                .map((post, index) => {
-                  // filter out drafts in production
-                  return (
-                    (post.node.frontmatter.draft !== true ||
-                      process.env.NODE_ENV !== 'production') && (
-                      <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
-                    )
-                  );
-                })}
-            </div>
+        <div
+          css={[outer, SiteHeader, SiteHeaderStyles]}
+          className="site-header-background"
+          style={{
+            backgroundImage: `url(require('../content/img/software_development.jpg'))`,
+            height: '500px',
+          }}
+        >
+          <div css={inner}>
+            <SiteHeaderContent className="site-header-conent">
+              <SiteDescription>{config.description}</SiteDescription>
+            </SiteHeaderContent>
+          </div>
+        </div>
+        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+          <div css={inner}>
+            <article className="post page" css={[PostFull, NoImage]}>
+              <PostFullHeader className="post-full-header">
+                <PostFullTitle className="post-full-title">Programming Languages</PostFullTitle>
+              </PostFullHeader>
+              <div>
+                <h1>R</h1>
+                <h1>React</h1>
+                <h1>React Native + Expo</h1>
+                <h5>
+                  GitHub: <a href="https://github.com/tkd708">tkd708</a>
+                </h5>
+              </div>
+              <div css={[PostFeed]}>
+                {props.data.allMarkdownRemark.edges
+                  .filter(edge => edge.node.frontmatter.tags[0] === 'Software')
+                  .map((post, index) => {
+                    // filter out drafts in production
+                    return (
+                      (post.node.frontmatter.draft !== true ||
+                        process.env.NODE_ENV !== 'production') && (
+                        <PostCard
+                          key={post.node.fields.slug}
+                          post={post.node}
+                          large={index === 0}
+                        />
+                      )
+                    );
+                  })}
+              </div>
+            </article>
           </div>
         </main>
         <Footer />
@@ -201,6 +239,21 @@ export const softwarePageQuery = graphql`
           }
         }
       }
+    }
+  }
+`;
+
+const PageTemplate = css`
+  .site-main {
+    margin-top: 64px;
+    padding-bottom: 4vw;
+    background: #fff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .site-main {
+      /* background: var(--darkmode); */
+      background: ${colors.darkmode};
     }
   }
 `;

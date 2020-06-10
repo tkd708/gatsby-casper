@@ -6,10 +6,10 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';
-import { SocialLink, SocialLinkFb } from '../../styles/shared';
-import config from '../../website-config';
-import { Facebook } from '../icons/facebook';
-import { Twitter } from '../icons/twitter';
+//import { SocialLink, SocialLinkFb } from '../../styles/shared';
+//import config from '../../website-config';
+//import { Facebook } from '../icons/facebook';
+//import { Twitter } from '../icons/twitter';
 import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
 
@@ -95,7 +95,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
                 <Link to="/research">Research</Link>
               </li>
               <li role="menuitem">
-                <Link to="/software/">Software</Link>
+                <Link to="/software">Software</Link>
               </li>
               <li role="menuitem">
                 <Link to="/cv">CV</Link>
@@ -112,6 +112,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
           </SiteNavContent>
         </SiteNavLeft>
         <SiteNavRight>
+          {/* 
           <SocialLinks>
             {config.facebook && (
               <a
@@ -141,6 +142,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
             <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>
           )}
           {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
+          */}
         </SiteNavRight>
       </nav>
     );
