@@ -14,7 +14,6 @@ import {
   inner,
   outer,
   PostFeed,
-  Posts,
   SiteHeader,
   SiteHeaderContent,
   SiteHeaderStyles,
@@ -120,20 +119,6 @@ const SoftwarePage: React.FC<IndexProps> = props => {
                   config.title
                 )}
               </SiteTitle>
-              <SiteDescription>{config.description}</SiteDescription>
-            </SiteHeaderContent>
-          </div>
-        </div>
-        <div
-          css={[outer, SiteHeader, SiteHeaderStyles]}
-          className="site-header-background"
-          style={{
-            backgroundImage: `url(require('../content/img/software_development.jpg'))`,
-            height: '500px',
-          }}
-        >
-          <div css={inner}>
-            <SiteHeaderContent className="site-header-conent">
               <SiteDescription>{config.description}</SiteDescription>
             </SiteHeaderContent>
           </div>

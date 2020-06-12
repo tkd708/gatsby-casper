@@ -51,41 +51,34 @@ const About: React.FC = () => (
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">About is about</PostFullTitle>
+              <PostFullTitle className="post-full-title">About</PostFullTitle>
             </PostFullHeader>
 
             <PostFullContent className="post-full-content">
               <div className="post-content">
                 <h5>The portfolio website of Naoya Takeda</h5>
-                <p>Making it simpler.</p>
-                <p>I will update this page soon.</p>
+                <p> Sustainable Agriculture</p>
+                <p>
+                  Agriculture is an essential industry to supply foods around the world. However the
+                  resource use efficiency must be improved to achieve sufficient agricultural
+                  production under resource-limited conditions and to reduce environmental impacts.
+                </p>
+                <p> Data Analysis</p>
+                <p>
+                  Data is being accumulated more rapidly from diverse sections and analytical
+                  methodolosies have been developed as well. I want to extract information from the
+                  massive data using data visualisation, statistical analysis, modelling and
+                  simulation approaches.
+                </p>
+                <p>Software</p>
+                <p>
+                  Development The internet infrastructure and hardwares have been developing fast
+                  and enabling a lot more things online. I would like to provide solutions to wide
+                  range of social issues by developping software applications.{' '}
+                </p>
+                <p>Languages</p>
+                <p>Languages are still the key to expand the world you can access to...</p>
                 <p>This page will be about my vision, mission and mid-term goals.</p>
-
-                <form name="contact" method="POST" data-netlify="true">
-                  <p>
-                    <label>
-                      Name: <input type="text" name="name" />
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      Organisation: <input type="text" name="name" />
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      Email: <input type="email" name="email" />
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      Message: <textarea name="message"></textarea>
-                    </label>
-                  </p>
-                  <p>
-                    <button type="submit">Send</button>
-                  </p>
-                </form>
               </div>
             </PostFullContent>
           </article>

@@ -14,8 +14,11 @@ import {
   inner,
   outer,
   PostFeed,
-  Posts,
   SiteHeader,
+  SiteHeaderContent,
+  SiteHeaderStyles,
+  SiteTitle,
+  SiteDescription,
   SiteArchiveHeader,
   SiteNavMain,
   SiteMain,
@@ -95,6 +98,31 @@ const ResearchPage: React.FC<IndexProps> = props => {
             </div>
           </div>
         </header>
+        <div
+          css={[outer, SiteHeader, SiteHeaderStyles]}
+          className="site-header-background"
+          style={{
+            backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
+            height: '500px',
+          }}
+        >
+          <div css={inner}>
+            <SiteHeaderContent className="site-header-conent">
+              <SiteTitle className="site-title">
+                {props.data.logo ? (
+                  <img
+                    style={{ maxHeight: '55px' }}
+                    src={props.data.logo.childImageSharp.fixed.src}
+                    alt={config.title}
+                  />
+                ) : (
+                  config.title
+                )}
+              </SiteTitle>
+              <SiteDescription>{config.description}</SiteDescription>
+            </SiteHeaderContent>
+          </div>
+        </div>
         <main id="site-main" className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <article className="post page" css={[PostFull, NoImage]}>
@@ -143,7 +171,7 @@ export const researchPageQuery = graphql`
         }
       }
     }
-    header: file(relativePath: { eq: "img/blog-cover.png" }) {
+    header: file(relativePath: { eq: "img/sugar_field.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

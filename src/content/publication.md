@@ -30,7 +30,7 @@ https://doi.org/10.2525/ecb.57.15
 
 ---
 
-Oral Presentation at APSIM symposium 2020, University of Queensland, Brisbane
+(To be held) Oral Presentation at APSIM symposium 2020, University of Queensland, Brisbane
 
 <div style="text-align: right;">Nov. 2020</div>
 
