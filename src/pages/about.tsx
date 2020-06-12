@@ -51,12 +51,12 @@ const About: React.FC = () => (
         <div css={inner}>
           <article className="post page" css={[PostFull, NoImage]}>
             <PostFullHeader className="post-full-header">
-              <PostFullTitle className="post-full-title">About</PostFullTitle>
+              <PostFullTitle className="post-full-title">ABOUT</PostFullTitle>
             </PostFullHeader>
 
             <PostFullContent className="post-full-content">
               <div className="post-content">
-                <h5>The portfolio website of Naoya Takeda</h5>
+                <h5>The platform integrating activities of Naoya Takeda</h5>
                 <p> Sustainable Agriculture</p>
                 <p>
                   Agriculture is an essential industry to supply foods around the world. However the

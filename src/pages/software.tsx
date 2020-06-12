@@ -108,18 +108,8 @@ const SoftwarePage: React.FC<IndexProps> = props => {
         >
           <div css={inner}>
             <SiteHeaderContent className="site-header-conent">
-              <SiteTitle className="site-title">
-                {props.data.logo ? (
-                  <img
-                    style={{ maxHeight: '55px' }}
-                    src={props.data.logo.childImageSharp.fixed.src}
-                    alt={config.title}
-                  />
-                ) : (
-                  config.title
-                )}
-              </SiteTitle>
-              <SiteDescription>{config.description}</SiteDescription>
+              <SiteTitle className="site-title">SOFTWARE</SiteTitle>
+              <SiteDescription>Web & Mobile Application Development</SiteDescription>
             </SiteHeaderContent>
           </div>
         </div>
