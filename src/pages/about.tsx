@@ -60,6 +60,32 @@ const About: React.FC = () => (
                 <p>Making it simpler.</p>
                 <p>I will update this page soon.</p>
                 <p>This page will be about my vision, mission and mid-term goals.</p>
+
+                <form name="contact" method="POST" data-netlify="true">
+                  <p>
+                    <label>
+                      Name: <input type="text" name="name" />
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      Organisation: <input type="text" name="name" />
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      Email: <input type="email" name="email" />
+                    </label>
+                  </p>
+                  <p>
+                    <label>
+                      Message: <textarea name="message"></textarea>
+                    </label>
+                  </p>
+                  <p>
+                    <button type="submit">Send</button>
+                  </p>
+                </form>
               </div>
             </PostFullContent>
           </article>
