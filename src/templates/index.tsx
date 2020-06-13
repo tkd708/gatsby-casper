@@ -19,6 +19,7 @@ import {
   SiteDescription,
   SiteHeader,
   SiteHeaderContent,
+  SiteHeaderBackgroundImg,
   SiteMain,
   SiteTitle,
   SiteHeaderStyles,
@@ -91,11 +92,11 @@ const IndexPage: React.FC<IndexProps> = props => {
       </Helmet>
       <Wrapper>
         <div
-          css={[outer, SiteHeader, SiteHeaderStyles]}
+          //css={[outer, SiteHeader, SiteHeaderStyles]}
+          css={[SiteHeaderBackgroundImg]}
           className="site-header-background"
           style={{
             backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
-            height: '700px',
           }}
         >
           <div css={inner}>

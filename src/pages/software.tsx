@@ -15,6 +15,7 @@ import {
   outer,
   PostFeed,
   SiteHeader,
+  SiteHeaderBackgroundImg,
   SiteHeaderContent,
   SiteHeaderStyles,
   SiteTitle,
@@ -99,17 +100,17 @@ const SoftwarePage: React.FC<IndexProps> = props => {
           </div>
         </header>
         <div
-          css={[outer, SiteHeader, SiteHeaderStyles]}
+          //css={[outer, SiteHeaderStyles, SiteHeaderBackgroundImg]}
+          css={[SiteHeaderBackgroundImg]}
           className="site-header-background"
           style={{
             backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
-            height: '500px',
           }}
         >
           <div css={inner}>
             <SiteHeaderContent className="site-header-conent">
               <SiteTitle className="site-title">SOFTWARE</SiteTitle>
-              <SiteDescription>Web & Mobile Application Development</SiteDescription>
+              <SiteDescription>Web & Mobile Applications</SiteDescription>
             </SiteHeaderContent>
           </div>
         </div>

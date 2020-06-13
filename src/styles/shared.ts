@@ -120,6 +120,12 @@ export const SiteHeaderContent = styled.div`
   max-height: 340px;
 `;
 
+export const SiteHeaderBackgroundImg = css`
+  height: 100vh;
+  color: #fff;
+  background-size: cover;
+`;
+
 export const SiteHeaderStyles = css`
   position: relative;
   /* margin-top: 64px; */
