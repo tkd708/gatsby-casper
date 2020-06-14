@@ -8,6 +8,7 @@ import { css } from '@emotion/core';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
+import { Feature } from '../components/Feature';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import {
@@ -23,6 +24,10 @@ import {
   SiteArchiveHeader,
   SiteNavMain,
   SiteMain,
+  FeatureSection,
+  FeatureSectionTitle,
+  FeatureList,
+  FeedTitle,
 } from '../styles/shared';
 import config from '../website-config';
 import { NoImage, PostFull, PageContext, PostFullHeader, PostFullTitle } from '../templates/post';
@@ -114,20 +119,40 @@ const SoftwarePage: React.FC<IndexProps> = props => {
             </SiteHeaderContent>
           </div>
         </div>
+        <div
+          css={FeatureSection}
+          style={
+            {
+              //backgroundImage: `url('${props.data.featureBackground.childImageSharp.fixed.src}')`,
+            }
+          }
+        >
+          <div css={FeatureSectionTitle}>Programming Languages</div>
+          <h3>
+            GitHub: <a href="https://github.com/tkd708">tkd708</a>
+          </h3>
+          <div css={FeatureList}>
+            <Feature
+              image={props.data.feature1.childImageSharp.fixed.src}
+              title="Crop management"
+              description="Resource use efficient agronomic practices"
+            />
+            <Feature
+              image={props.data.feature2.childImageSharp.fixed.src}
+              title="Soil water & nutrient cycle"
+              description="GHG emissions and nutrient leaching"
+            />
+            <Feature
+              image={props.data.feature3.childImageSharp.fixed.src}
+              title="Crop modelling and simulation"
+              description="Scenario analysis to assess agronomic practices under diverse climate and soil conditions"
+            />
+          </div>
+        </div>
         <main id="site-main" className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <article className="post page" css={[PostFull, NoImage]}>
-              <PostFullHeader className="post-full-header">
-                <PostFullTitle className="post-full-title">Programming Languages</PostFullTitle>
-              </PostFullHeader>
-              <div>
-                <h1>R</h1>
-                <h1>React</h1>
-                <h1>React Native + Expo</h1>
-                <h5>
-                  GitHub: <a href="https://github.com/tkd708">tkd708</a>
-                </h5>
-              </div>
+              <p css={FeedTitle}>Latest stories</p>
               <div css={[PostFeed]}>
                 {props.data.allMarkdownRemark.edges
                   .filter(edge => edge.node.frontmatter.tags[0] === 'Software')
@@ -158,8 +183,6 @@ export const softwarePageQuery = graphql`
   query softwarePageQuery {
     logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fixed {
           ...GatsbyImageSharpFixed
         }
@@ -167,8 +190,34 @@ export const softwarePageQuery = graphql`
     }
     header: file(relativePath: { eq: "img/software_development.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    featureBackground: file(relativePath: { eq: "img/software_development.jpg" }) {
+      childImageSharp {
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature1: file(relativePath: { eq: "img/r_logo.png" }) {
+      childImageSharp {
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature2: file(relativePath: { eq: "img/react logo.png" }) {
+      childImageSharp {
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature3: file(relativePath: { eq: "img/react native logo.png" }) {
+      childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }

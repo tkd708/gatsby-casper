@@ -8,6 +8,7 @@ import { css } from '@emotion/core';
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
+import { Feature } from '../components/Feature';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import {
@@ -23,6 +24,10 @@ import {
   SiteArchiveHeader,
   SiteNavMain,
   SiteMain,
+  FeatureSection,
+  FeatureSectionTitle,
+  FeatureList,
+  FeedTitle,
 } from '../styles/shared';
 import config from '../website-config';
 import { NoImage, PostFull, PageContext, PostFullHeader, PostFullTitle } from '../templates/post';
@@ -100,7 +105,6 @@ const ResearchPage: React.FC<IndexProps> = props => {
           </div>
         </header>
         <div
-          //css={[outer, SiteHeader, SiteHeaderStyles]}
           css={[SiteHeaderBackgroundImg]}
           className="site-header-background"
           style={{
@@ -114,17 +118,37 @@ const ResearchPage: React.FC<IndexProps> = props => {
             </SiteHeaderContent>
           </div>
         </div>
+        <div
+          css={FeatureSection}
+          style={
+            {
+              //backgroundImage: `url('${props.data.featureBackground.childImageSharp.fixed.src}')`,
+            }
+          }
+        >
+          <div css={FeatureSectionTitle}>Research focuses</div>
+          <div css={FeatureList}>
+            <Feature
+              image={props.data.feature1.childImageSharp.fixed.src}
+              title="Crop management"
+              description="Resource use efficient agronomic practices"
+            />
+            <Feature
+              image={props.data.feature1.childImageSharp.fixed.src}
+              title="Soil water & nutrient cycle"
+              description="GHG emissions and nutrient leaching"
+            />
+            <Feature
+              image={props.data.feature1.childImageSharp.fixed.src}
+              title="Crop modelling and simulation"
+              description="Scenario analysis to assess agronomic practices under diverse climate and soil conditions"
+            />
+          </div>
+        </div>
         <main id="site-main" className="site-main" css={[SiteMain, outer]}>
           <div css={inner}>
             <article className="post page" css={[PostFull, NoImage]}>
-              <PostFullHeader className="post-full-header">
-                <PostFullTitle className="post-full-title">Research focuses</PostFullTitle>
-              </PostFullHeader>
-              <div>
-                <h1>Crop management</h1>
-                <h1>Nitrogen Use Efficiency</h1>
-                <h1>Crop models</h1>
-              </div>
+              <p css={FeedTitle}>Latest stories</p>
               <div css={[PostFeed]}>
                 {props.data.allMarkdownRemark.edges
                   .filter(edge => edge.node.frontmatter.tags[0] === 'Research')
@@ -155,8 +179,6 @@ export const researchPageQuery = graphql`
   query researchPageQuery {
     logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fixed {
           ...GatsbyImageSharpFixed
         }
@@ -164,8 +186,34 @@ export const researchPageQuery = graphql`
     }
     header: file(relativePath: { eq: "img/sugar_field.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    featureBackground: file(relativePath: { eq: "img/ibague.jpg" }) {
+      childImageSharp {
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature1: file(relativePath: { eq: "img/apsim2.jpg" }) {
+      childImageSharp {
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature2: file(relativePath: { eq: "img/apsim2.jpg" }) {
+      childImageSharp {
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature3: file(relativePath: { eq: "img/apsim2.jpg" }) {
+      childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }

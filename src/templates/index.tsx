@@ -9,6 +9,7 @@ import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import Pagination from '../components/Pagination';
 import { PostCard } from '../components/PostCard';
+import { StripeSection } from '../components/StripeSection';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts';
 import {
@@ -23,6 +24,7 @@ import {
   SiteMain,
   SiteTitle,
   SiteHeaderStyles,
+  FeedTitle,
 } from '../styles/shared';
 import config from '../website-config';
 import { PageContext } from './post';
@@ -117,11 +119,19 @@ const IndexPage: React.FC<IndexProps> = props => {
             </SiteHeaderContent>
           </div>
         </div>
+        <StripeSection
+          image={props.data.header.childImageSharp.fixed.src}
+          title="test title"
+          description="test description"
+        />
+        <StripeSection
+          image={props.data.header.childImageSharp.fixed.src}
+          title="test title"
+          description="test description"
+        />
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
-            <div>
-              <h1>What about inserting contents here</h1>
-            </div>
+            <p css={FeedTitle}>Latest stories</p>
             <div css={[PostFeed]}>
               {props.data.allMarkdownRemark.edges.map((post, index) => {
                 // filter out drafts in production
@@ -163,6 +173,27 @@ export const pageQuery = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature1: file(relativePath: { eq: "img/apsim2.jpg" }) {
+      childImageSharp {
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature2: file(relativePath: { eq: "img/apsim2.jpg" }) {
+      childImageSharp {
+        fixed(width: 2000, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    feature3: file(relativePath: { eq: "img/apsim2.jpg" }) {
+      childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }

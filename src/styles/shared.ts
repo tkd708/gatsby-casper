@@ -40,12 +40,13 @@ export const SiteTitle = styled.h1`
   z-index: 10;
   margin: 0 0 0 -2px;
   padding: 0;
-  font-size: 5rem;
+  font-size: 7rem;
+  font-family: 'Times New Roman', Times, serif;
   line-height: 1em;
-  font-weight: 600;
+  font-weight: 400;
 
   @media (max-width: 500px) {
-    font-size: 4.2rem;
+    font-size: 4rem;
   }
 `;
 
@@ -53,9 +54,10 @@ export const SiteDescription = styled.h2`
   z-index: 10;
   margin: 0;
   padding: 5px 0;
-  font-size: 2.1rem;
+  font-size: 4rem;
+  font-family: 'Times New Roman', Times, serif;
   line-height: 1.4em;
-  font-weight: 400;
+  font-weight: 300;
   opacity: 0.8;
 
   @media (max-width: 500px) {
@@ -115,14 +117,14 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6vw 3vw;
+  padding: 15vw 3vw;
+  color: #fff;
   min-height: 200px;
   max-height: 340px;
 `;
 
 export const SiteHeaderBackgroundImg = css`
   height: 100vh;
-  color: #fff;
   background-size: cover;
 `;
 
@@ -415,5 +417,70 @@ export const NoImage = css`
     .no-image .author-social-link a {
       color: rgba(255, 255, 255, 0.75);
     }
+  }
+`;
+
+export const FeatureSection = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-size: cover;
+  width: 100vw;
+  z-index: 0;
+
+  :before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: -5px;
+    bottom: -5px;
+    left: -5px;
+    right: -5px;
+    background: inherit;
+    filter: grayscale(100%);
+  }
+`;
+
+export const FeatureSectionTitle = css`
+  padding: 0;
+  margin: 5vh;
+  font-size: 5rem;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1em;
+  font-weight: 300;
+
+  @media (max-width: 500px) {
+    font-size: 3rem;
+  }
+`;
+
+export const FeatureList = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+  }
+`;
+
+export const FeedTitle = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5vh;
+  font-size: 5rem;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1em;
+  font-weight: 300;
+
+  @media (max-width: 500px) {
+    font-size: 3rem;
   }
 `;
