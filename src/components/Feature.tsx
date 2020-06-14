@@ -30,7 +30,7 @@ const FeatureContainer = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 33%;
+  width: 100%;
   height: 50vh;
   position: relative;
 
@@ -41,13 +41,14 @@ const FeatureContainer = css`
 `;
 
 const FeatureImage = css`
-  height: 90%;
-  width: 90%;
+  background-size: cover;
+  height: 80%;
+  width: 80%;
 `;
 
 const FeatureMask = css`
-  width: 90%;
-  height: 90%;
+  width: 80%;
+  height: 80%;
   position: absolute;
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.4);
