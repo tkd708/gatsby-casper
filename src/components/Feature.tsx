@@ -10,17 +10,13 @@ export interface FeatureProps {
 export const Feature: React.FC<FeatureProps> = ({ image, title, description }) => {
   return (
     <div>
-      <div css={FeatureContainer} className="FeatureContainer">
-        <img css={FeatureImage} className="FeatureImage" src={image} />
+      <div css={FeatureContainer}>
+        <img css={FeatureImage} src={image} />
         <div css={FeatureMask}>
-          <p css={FeatureDescription} className="FeatureDescription">
-            {description}
-          </p>
+          <p css={FeatureDescription}>{description}</p>
         </div>
       </div>
-      <p css={FeatureTitle} className="FeatureTitle">
-        {title}
-      </p>
+      <p css={FeatureTitle}>{title}</p>
     </div>
   );
 };

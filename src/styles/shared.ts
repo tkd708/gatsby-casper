@@ -117,10 +117,14 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 15vw 3vw;
+  padding: 20vh 15vw;
   color: #fff;
   min-height: 200px;
   max-height: 340px;
+
+  @media (max-width: 500px) {
+    padding: 20vh 15vw;
+  }
 `;
 
 export const SiteHeaderBackgroundImg = css`

@@ -1,22 +1,36 @@
 import React from 'react';
 import { css } from '@emotion/core';
+import { Link } from 'gatsby';
 
 export interface StripeProps {
   image: string;
   title: string;
   description: string;
+  link: string;
+  side: string;
 }
 
-export const StripeSection: React.FC<StripeProps> = ({ image, title, description }) => {
+export const StripeSection: React.FC<StripeProps> = ({ image, title, description, link, side }) => {
   return (
     <div
       css={StripeContainer}
       style={{
+        alignItems: `${side}`,
         backgroundImage: `url('${image}')`,
       }}
     >
       <p css={StripeTitle}>{title}</p>
-      <p css={StripeDescription}>{description}</p>
+      <div
+        css={StripeMask}
+        style={{
+          alignItems: `${side}`,
+        }}
+      >
+        <p css={StripeDescription}>{description}</p>
+        <Link to={`/${link}`} css={StripeLink}>
+          Read more...
+        </Link>
+      </div>
     </div>
   );
 };
@@ -24,7 +38,6 @@ export const StripeSection: React.FC<StripeProps> = ({ image, title, description
 const StripeContainer = css`
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
   background-size: cover;
   height: 50vh;
@@ -35,43 +48,75 @@ const StripeContainer = css`
     z-index: -1;
     content: '';
     position: absolute;
-    top: -5px;
-    bottom: -5px;
-    left: -5px;
-    right: -5px;
+    top: -0.1px;
+    bottom: -0.1px;
+    left: -0.1px;
+    right: -0.1px;
     background: inherit;
     filter: grayscale(100%);
+  }
+
+  @media (max-width: 500px) {
+    height: 30vh;
+  }
+`;
+
+const StripeMask = css`
+  display: flex;
+  flex-direction: column;
+  justifycontent: 'space-between';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+
+  :hover {
+    opacity: 1;
+    padding-top: 10vh;
+  }
+
+  @media (max-width: 500px) {
+    :hover {
+      opacity: 1;
+      padding-top: 7vh;
+    }
   }
 `;
 
 const StripeTitle = css`
-  margin: 3vh;
-  font-size: 2rem;
+  margin: 5vh 5vw;
+  font-size: 7rem;
   font-family: 'Times New Roman', Times, serif;
   text-decoration: underline;
-
-  display: float;
-  :hover {
-    opacity: 0.5;
-  }
+  color: white;
 
   @media (max-width: 500px) {
-    font-size: 1.8rem;
+    font-size: 3rem;
   }
 `;
 
 const StripeDescription = css`
-  opacity: 0.3;
-  transform: translateY(100%);
-  transition: opacity 0.6s, transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-  overflow: hidden;
+  margin: 3vh 5vw;
+  font-size: 4rem;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.5;
+  color: white;
 
   @media (max-width: 500px) {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
+`;
 
-  .FeatureImage:hover + {
-    opacity: 0.8;
-    transform: none;
+const StripeLink = css`
+  margin: 3vh 5vw;
+  font-size: 4rem;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+
+  @media (max-width: 500px) {
+    font-size: 2rem;
   }
 `;

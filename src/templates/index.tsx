@@ -94,7 +94,6 @@ const IndexPage: React.FC<IndexProps> = props => {
       </Helmet>
       <Wrapper>
         <div
-          //css={[outer, SiteHeader, SiteHeaderStyles]}
           css={[SiteHeaderBackgroundImg]}
           className="site-header-background"
           style={{
@@ -120,14 +119,25 @@ const IndexPage: React.FC<IndexProps> = props => {
           </div>
         </div>
         <StripeSection
-          image={props.data.header.childImageSharp.fixed.src}
-          title="test title"
-          description="test description"
+          image={props.data.stripe1.childImageSharp.fixed.src}
+          title="Person"
+          description="A Ph.D. candidate at Queensland University of Technology (Brisbane, Australia) from Japan."
+          link="about"
+          side="flex-start"
         />
         <StripeSection
-          image={props.data.header.childImageSharp.fixed.src}
-          title="test title"
-          description="test description"
+          image={props.data.stripe2.childImageSharp.fixed.src}
+          title="Research"
+          description="Research in Agricultural and Environmental sciences, consisting of field experiments as well as modelling and simulation analyses. Experiences in rice (Japan and Colombia) and sugarcane (Australia) cropping systems."
+          link="research"
+          side="flex-end"
+        />
+        <StripeSection
+          image={props.data.stripe3.childImageSharp.fixed.src}
+          title="Software"
+          description="Software development with R statistical software, React (web site and web application) and React Native (with Expo for mobile application)"
+          link="software"
+          side="flex-start"
         />
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
@@ -178,21 +188,21 @@ export const pageQuery = graphql`
         }
       }
     }
-    feature1: file(relativePath: { eq: "img/apsim2.jpg" }) {
+    stripe1: file(relativePath: { eq: "img/person.JPG" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    feature2: file(relativePath: { eq: "img/apsim2.jpg" }) {
+    stripe2: file(relativePath: { eq: "img/person2.JPG" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    feature3: file(relativePath: { eq: "img/apsim2.jpg" }) {
+    stripe3: file(relativePath: { eq: "img/person3.JPG" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
