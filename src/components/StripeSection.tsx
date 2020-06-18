@@ -99,6 +99,10 @@ const StripeTitle = css`
   @media (max-width: 800px) {
     font-size: 4rem;
   }
+
+  @media (max-width: 500px) {
+    font-size: 3rem;
+  }
 `;
 
 const StripeDescription = css`
@@ -110,6 +114,10 @@ const StripeDescription = css`
 
   @media (max-width: 800px) {
     font-size: 2rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 1.5rem;
   }
 `;
 
