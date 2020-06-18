@@ -63,7 +63,7 @@ export const SiteDescription = styled.h2`
   opacity: 0.8;
 
   @media (max-width: 800px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;
 
@@ -119,13 +119,13 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20vh 5vw;
+  padding: 20vh;
   color: #fff;
   min-height: 200px;
   max-height: 340px;
 
   @media (max-width: 800px) {
-    padding: 20vh 5vw;
+    padding: 20vh;
   }
 `;
 
