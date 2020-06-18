@@ -256,6 +256,10 @@ const Logo = css`
   height: 200px;
 
   @media (max-width: 800px) {
+    height: 150px;
+  }
+
+  @media (max-width: 500px) {
     height: 100px;
   }
 `;
