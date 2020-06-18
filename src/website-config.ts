@@ -54,7 +54,7 @@ const config: WebsiteConfig = {
   coverImage: 'img/blog-index.jpg',
   logo: 'img/logo_initial2.png',
   lang: 'en',
-  siteUrl: 'https://gatsby-casper.netlify.com',
+  siteUrl: 'https://naoya-takeda.netlify.com',
   facebook: 'https://www.facebook.com/ghost',
   twitter: 'https://twitter.com/tryghost',
   showSubscribe: true,
