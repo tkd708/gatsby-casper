@@ -254,8 +254,6 @@ export const pageQuery = graphql`
 
 const Logo = css`
   height: 40vh;
-  margin-top: -10vh;
-  margin-bottom: -15vh;
 
   @media (max-width: 800px) {
     height: 30vh;
