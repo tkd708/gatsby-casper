@@ -119,13 +119,13 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20vh;
+  padding: 20vh 1vw;
   color: #fff;
-  min-height: 200px;
+  min-height: 100px;
   max-height: 340px;
 
   @media (max-width: 800px) {
-    padding: 20vh;
+    padding: 20vh 1vw;
   }
 `;
 
