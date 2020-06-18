@@ -27,11 +27,13 @@ const FeatureContainer = css`
   justify-content: center;
   align-items: center;
   width: 100%;
+  max-width: 30vw;
   height: 50vh;
   position: relative;
 
-  @media (max-width: 900px) {
+  @media (max-width: 800px) {
     width: 100%;
+    max-width: 400px;
     height: 50vh;
   }
 `;
@@ -62,7 +64,7 @@ const FeatureTitle = css`
   flex-direction: row;
   justify-content: center;
 
-  margin: 3vh;
+  margin: 1vh;
   font-size: 3rem;
   font-family: 'Times New Roman', Times, serif;
   text-decoration: underline;

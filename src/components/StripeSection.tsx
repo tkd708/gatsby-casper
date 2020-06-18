@@ -40,6 +40,8 @@ const StripeContainer = css`
   flex-direction: column;
   position: relative;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   height: 50vh;
   width: 100vw;
   z-index: 0;
@@ -53,11 +55,11 @@ const StripeContainer = css`
     left: -0.1px;
     right: -0.1px;
     background: inherit;
-    filter: grayscale(100%);
+    filter: grayscale(80%);
   }
 
-  @media (max-width: 500px) {
-    height: 30vh;
+  @media (max-width: 800px) {
+    height: 40vh;
   }
 `;
 
@@ -69,7 +71,7 @@ const StripeMask = css`
   height: 100%;
   position: absolute;
   opacity: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 
@@ -78,7 +80,7 @@ const StripeMask = css`
     padding-top: 10vh;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     :hover {
       opacity: 1;
       padding-top: 7vh;
@@ -88,35 +90,36 @@ const StripeMask = css`
 
 const StripeTitle = css`
   margin: 5vh 5vw;
-  font-size: 7rem;
+  font-size: 7.5rem;
+  font-weight: 400;
   font-family: 'Times New Roman', Times, serif;
   text-decoration: underline;
   color: white;
 
-  @media (max-width: 500px) {
-    font-size: 3rem;
+  @media (max-width: 800px) {
+    font-size: 4rem;
   }
 `;
 
 const StripeDescription = css`
   margin: 3vh 5vw;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: 'Times New Roman', Times, serif;
-  line-height: 1.5;
+  line-height: 1.3;
   color: white;
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     font-size: 2rem;
   }
 `;
 
 const StripeLink = css`
   margin: 3vh 5vw;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-family: 'Times New Roman', Times, serif;
   color: white;
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     font-size: 2rem;
   }
 `;

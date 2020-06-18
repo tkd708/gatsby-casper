@@ -134,13 +134,13 @@ const ResearchPage: React.FC<IndexProps> = props => {
               description="Resource use efficient agronomic practices"
             />
             <Feature
-              image={props.data.feature1.childImageSharp.fixed.src}
-              title="Soil water & nutrient cycle"
+              image={props.data.feature2.childImageSharp.fixed.src}
+              title="Soil nutrient cycle"
               description="GHG emissions and nutrient leaching"
             />
             <Feature
-              image={props.data.feature1.childImageSharp.fixed.src}
-              title="Crop modelling and simulation"
+              image={props.data.feature3.childImageSharp.fixed.src}
+              title="Crop growth model"
               description="Scenario analysis to assess agronomic practices under diverse climate and soil conditions"
             />
           </div>
@@ -198,14 +198,14 @@ export const researchPageQuery = graphql`
         }
       }
     }
-    feature1: file(relativePath: { eq: "img/apsim2.jpg" }) {
+    feature1: file(relativePath: { eq: "img/ibague5.JPG" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    feature2: file(relativePath: { eq: "img/apsim2.jpg" }) {
+    feature2: file(relativePath: { eq: "img/sugar4.png" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed

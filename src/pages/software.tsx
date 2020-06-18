@@ -134,18 +134,18 @@ const SoftwarePage: React.FC<IndexProps> = props => {
           <div css={FeatureList}>
             <Feature
               image={props.data.feature1.childImageSharp.fixed.src}
-              title="Crop management"
-              description="Resource use efficient agronomic practices"
+              title="R"
+              description="Statistical analysis, machine learning approaches and spatial analysis with GIS data"
             />
             <Feature
               image={props.data.feature2.childImageSharp.fixed.src}
-              title="Soil water & nutrient cycle"
-              description="GHG emissions and nutrient leaching"
+              title="React"
+              description="Web application including this personal website!"
             />
             <Feature
               image={props.data.feature3.childImageSharp.fixed.src}
-              title="Crop modelling and simulation"
-              description="Scenario analysis to assess agronomic practices under diverse climate and soil conditions"
+              title="React Native + Expo"
+              description="Mobile application development"
             />
           </div>
         </div>
@@ -209,14 +209,14 @@ export const softwarePageQuery = graphql`
         }
       }
     }
-    feature2: file(relativePath: { eq: "img/react logo.png" }) {
+    feature2: file(relativePath: { eq: "img/react-logo.png" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    feature3: file(relativePath: { eq: "img/react native logo.png" }) {
+    feature3: file(relativePath: { eq: "img/expo-logo2.jpg" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed

@@ -106,7 +106,7 @@ const IndexPage: React.FC<IndexProps> = props => {
               <SiteTitle className="site-title">
                 {props.data.logo ? (
                   <img
-                    style={{ maxHeight: '55px' }}
+                    css={Logo}
                     src={props.data.logo.childImageSharp.fixed.src}
                     alt={config.title}
                   />
@@ -120,8 +120,8 @@ const IndexPage: React.FC<IndexProps> = props => {
         </div>
         <StripeSection
           image={props.data.stripe1.childImageSharp.fixed.src}
-          title="Person"
-          description="A Ph.D. candidate at Queensland University of Technology (Brisbane, Australia) from Japan."
+          title="About"
+          description="The personal website of Naoya Takeda, a Ph.D. candidate at Queensland University of Technology (Brisbane, Australia) from Japan."
           link="about"
           side="flex-start"
         />
@@ -170,10 +170,8 @@ const IndexPage: React.FC<IndexProps> = props => {
 
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
+    logo: file(relativePath: { eq: "img/logo_initial2.png" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fixed {
           ...GatsbyImageSharpFixed
         }
@@ -181,28 +179,26 @@ export const pageQuery = graphql`
     }
     header: file(relativePath: { eq: "img/blog-index.jpg" }) {
       childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    stripe1: file(relativePath: { eq: "img/person.JPG" }) {
+    stripe1: file(relativePath: { eq: "img/person5.jpg" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    stripe2: file(relativePath: { eq: "img/person2.JPG" }) {
+    stripe2: file(relativePath: { eq: "img/ibague_field2.jpg" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    stripe3: file(relativePath: { eq: "img/person3.JPG" }) {
+    stripe3: file(relativePath: { eq: "img/CIAT.JPG" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
@@ -253,6 +249,17 @@ export const pageQuery = graphql`
         }
       }
     }
+  }
+`;
+
+const Logo = css`
+  height: 40vh;
+  margin-top: -10vh;
+  margin-bottom: -15vh;
+
+  @media (max-width: 800px) {
+    height: 30vh;
+    margin-bottom: -10vh;
   }
 `;
 

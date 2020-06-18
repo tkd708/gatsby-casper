@@ -41,11 +41,12 @@ export const SiteTitle = styled.h1`
   margin: 0 0 0 -2px;
   padding: 0;
   font-size: 7rem;
+  font-weight: 400;
   font-family: 'Times New Roman', Times, serif;
   line-height: 1em;
-  font-weight: 400;
+  text-decoration: underline;
 
-  @media (max-width: 500px) {
+  @media (max-width: 800px) {
     font-size: 4rem;
   }
 `;
@@ -53,15 +54,16 @@ export const SiteTitle = styled.h1`
 export const SiteDescription = styled.h2`
   z-index: 10;
   margin: 0;
+  margin-top: 3vh;
   padding: 5px 0;
-  font-size: 4rem;
+  font-size: 5rem;
   font-family: 'Times New Roman', Times, serif;
   line-height: 1.4em;
   font-weight: 300;
   opacity: 0.8;
 
-  @media (max-width: 500px) {
-    font-size: 1.8rem;
+  @media (max-width: 800px) {
+    font-size: 3rem;
   }
 `;
 
@@ -117,13 +119,13 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20vh 15vw;
+  padding: 20vh 5vw;
   color: #fff;
   min-height: 200px;
   max-height: 340px;
 
-  @media (max-width: 500px) {
-    padding: 20vh 15vw;
+  @media (max-width: 800px) {
+    padding: 20vh 5vw;
   }
 `;
 
