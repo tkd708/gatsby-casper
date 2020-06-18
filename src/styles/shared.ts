@@ -123,13 +123,17 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20vh 1vw;
+  padding: 25vh 1vw;
   color: #fff;
   min-height: 100px;
   max-height: 340px;
 
   @media (max-width: 800px) {
     padding: 20vh 1vw;
+  }
+
+  @media (max-width: 500px) {
+    padding: 15vh 1vw;
   }
 `;
 
