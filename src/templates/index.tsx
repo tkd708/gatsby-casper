@@ -261,7 +261,6 @@ const Logo = css`
 
   @media (max-width: 500px) {
     height: 100px;
-    margin-top: -10vh;
   }
 `;
 
