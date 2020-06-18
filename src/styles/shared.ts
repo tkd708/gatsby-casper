@@ -129,11 +129,11 @@ export const SiteHeaderContent = styled.div`
   max-height: 340px;
 
   @media (max-width: 800px) {
-    padding: 20vh 1vw;
+    padding: 15vh 1vw;
   }
 
   @media (max-width: 500px) {
-    padding: 15vh 1vw;
+    padding: 12vh 1vw;
   }
 `;
 
