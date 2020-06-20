@@ -39,6 +39,7 @@ const FeatureContainer = css`
 `;
 
 const FeatureImage = css`
+  background-position: center center;
   background-size: cover;
   height: 80%;
   width: 80%;

@@ -8,28 +8,34 @@ export interface StripeProps {
   description: string;
   link: string;
   side: string;
+  titleBackColor: string;
 }
 
-export const StripeSection: React.FC<StripeProps> = ({ image, title, description, link, side }) => {
+export const StripeSection: React.FC<StripeProps> = ({
+  image,
+  title,
+  description,
+  link,
+  side,
+  titleBackColor,
+}) => {
   return (
-    <div
-      css={StripeContainer}
-      style={{
-        alignItems: `${side}`,
-        backgroundImage: `url('${image}')`,
-      }}
-    >
-      <p css={StripeTitle}>{title}</p>
+    <div css={StripeContainer} style={{ flexDirection: `${side}` }}>
+      <div css={StripeTitleContainer} style={{ backgroundColor: `${titleBackColor}` }}>
+        <p css={StripeTitle}>{title}</p>
+      </div>
       <div
-        css={StripeMask}
+        css={StripeImage}
         style={{
-          alignItems: `${side}`,
+          backgroundImage: `url('${image}')`,
         }}
       >
-        <p css={StripeDescription}>{description}</p>
-        <Link to={`/${link}`} css={StripeLink}>
-          Read more...
-        </Link>
+        <div css={StripeMask}>
+          <p css={StripeDescription}>{description}</p>
+          <Link to={`/${link}`} css={StripeLink}>
+            Read more...
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -37,13 +43,56 @@ export const StripeSection: React.FC<StripeProps> = ({ image, title, description
 
 const StripeContainer = css`
   display: flex;
+  position: relative;
+  height: 50vh;
+  width: 100vw;
+  z-index: 0;
+
+  @media (max-width: 800px) {
+    height: 40vh;
+  }
+`;
+
+const StripeTitleContainer = css`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  width: 30vw;
+  z-index: 0;
+  opacity: 0.7;
+
+  @media (max-width: 800px) {
+    height: 40vh;
+  }
+`;
+
+const StripeTitle = css`
+  align-self: center;
+  margin: 5vh 5vw;
+  font-size: 6rem;
+  font-weight: 400;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: underline;
+  color: white;
+
+  @media (max-width: 800px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 3rem;
+  }
+`;
+
+const StripeImage = css`
+  display: flex;
   flex-direction: column;
   position: relative;
   background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  height: 50vh;
-  width: 100vw;
+  background-position: center top;
+  height: 100%;
+  width: 70vw;
   z-index: 0;
 
   :before {
@@ -77,31 +126,14 @@ const StripeMask = css`
 
   :hover {
     opacity: 1;
-    padding-top: 10vh;
+    padding-top: 3vh;
   }
 
   @media (max-width: 800px) {
     :hover {
       opacity: 1;
-      padding-top: 7vh;
+      padding-top: 2vh;
     }
-  }
-`;
-
-const StripeTitle = css`
-  margin: 5vh 5vw;
-  font-size: 7.5rem;
-  font-weight: 400;
-  font-family: 'Times New Roman', Times, serif;
-  text-decoration: underline;
-  color: white;
-
-  @media (max-width: 800px) {
-    font-size: 4rem;
-  }
-
-  @media (max-width: 500px) {
-    font-size: 3rem;
   }
 `;
 

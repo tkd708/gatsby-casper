@@ -37,8 +37,7 @@ export const SiteMain = css`
 `;
 
 export const SiteTitle = styled.h1`
-  z-index: 10;
-  margin: 0 0 0 -2px;
+  z-index: 150;
   padding: 0;
   font-size: 7rem;
   font-weight: 400;
@@ -52,15 +51,13 @@ export const SiteTitle = styled.h1`
 `;
 
 export const SiteDescription = styled.h2`
-  z-index: 10;
-  margin: 0;
+  z-index: 150;
   margin-top: 3vh;
   padding: 5px 0;
   font-size: 5rem;
   font-family: 'Times New Roman', Times, serif;
   line-height: 1.4em;
   font-weight: 300;
-  opacity: 0.8;
 
   @media (max-width: 800px) {
     font-size: 3rem;
@@ -123,23 +120,31 @@ export const SiteHeaderContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 25vh 1vw;
   color: #fff;
-  min-height: 100px;
-  max-height: 340px;
+  margin-top: 25vh;
 
   @media (max-width: 800px) {
-    padding: 20vh 1vw;
+    margin-top: 15vh 1vw;
   }
 
   @media (max-width: 500px) {
-    padding: 18vh 1vw;
+    margin-top: 10vh 1vw;
   }
 `;
 
 export const SiteHeaderBackgroundImg = css`
   height: 100vh;
   background-size: cover;
+
+  @media (max-width: 800px) {
+    height: 80vh;
+    background-position: center center;
+  }
+
+  @media (max-width: 500px) {
+    height: 60vh;
+    background-position: center center;
+  }
 `;
 
 export const SiteHeaderStyles = css`

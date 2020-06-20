@@ -17,6 +17,8 @@ import {
   outer,
   PostFeed,
   Posts,
+  SiteArchiveHeader,
+  SiteNavMain,
   SiteDescription,
   SiteHeader,
   SiteHeaderContent,
@@ -103,7 +105,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           <div css={inner}>
             <SiteNav isHome />
             <SiteHeaderContent className="site-header-conent">
-              <SiteTitle className="site-title">
+              <SiteTitle className="site-title" css={IndexTitle}>
                 {props.data.logo ? (
                   <img
                     css={Logo}
@@ -123,21 +125,24 @@ const IndexPage: React.FC<IndexProps> = props => {
           title="About"
           description="The personal website of Naoya Takeda, a Ph.D. candidate at Queensland University of Technology (Brisbane, Australia) from Japan."
           link="about"
-          side="flex-start"
+          side="row"
+          titleBackColor="#800000"
         />
         <StripeSection
           image={props.data.stripe2.childImageSharp.fixed.src}
           title="Research"
           description="Research in Agricultural and Environmental sciences, consisting of field experiments as well as modelling and simulation analyses. Experiences in rice (Japan and Colombia) and sugarcane (Australia) cropping systems."
           link="research"
-          side="flex-end"
+          side="row-reverse"
+          titleBackColor="#556B2F"
         />
         <StripeSection
           image={props.data.stripe3.childImageSharp.fixed.src}
           title="Software"
           description="Software development with R statistical software, React (web site and web application) and React Native (with Expo for mobile application)"
           link="software"
-          side="flex-start"
+          side="row"
+          titleBackColor="#4682B4"
         />
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
@@ -261,7 +266,21 @@ const Logo = css`
 
   @media (max-width: 500px) {
     height: 100px;
-    margin-top: -10vh;
+  }
+`;
+
+const IndexTitle = css`
+  margin-top: -20vh;
+  margin-bottom: -10vh;
+
+  @media (max-width: 800px) {
+    margin-top: -25vh;
+    margin-bottom: -10vh;
+  }
+
+  @media (max-width: 500px) {
+    margin-top: -30vh;
+    margin-bottom: -7vh;
   }
 `;
 
