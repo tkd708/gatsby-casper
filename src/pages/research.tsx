@@ -118,14 +118,7 @@ const ResearchPage: React.FC<IndexProps> = props => {
             </SiteHeaderContent>
           </div>
         </div>
-        <div
-          css={FeatureSection}
-          style={
-            {
-              //backgroundImage: `url('${props.data.featureBackground.childImageSharp.fixed.src}')`,
-            }
-          }
-        >
+        <div css={FeatureSection}>
           <div css={FeatureSectionTitle}>Research focuses</div>
           <div css={FeatureList}>
             <Feature

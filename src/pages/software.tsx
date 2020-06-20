@@ -105,7 +105,6 @@ const SoftwarePage: React.FC<IndexProps> = props => {
           </div>
         </header>
         <div
-          //css={[outer, SiteHeaderStyles, SiteHeaderBackgroundImg]}
           css={[SiteHeaderBackgroundImg]}
           className="site-header-background"
           style={{
@@ -119,14 +118,7 @@ const SoftwarePage: React.FC<IndexProps> = props => {
             </SiteHeaderContent>
           </div>
         </div>
-        <div
-          css={FeatureSection}
-          style={
-            {
-              //backgroundImage: `url('${props.data.featureBackground.childImageSharp.fixed.src}')`,
-            }
-          }
-        >
+        <div css={FeatureSection}>
           <div css={FeatureSectionTitle}>Programming Languages</div>
           <h3>
             GitHub: <a href="https://github.com/tkd708">tkd708</a>
