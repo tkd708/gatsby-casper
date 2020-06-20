@@ -271,16 +271,16 @@ const Logo = css`
 
 const IndexTitle = css`
   margin-top: -20vh;
-  margin-bottom: -10vh;
+  margin-bottom: -5vh;
 
   @media (max-width: 800px) {
     margin-top: -25vh;
-    margin-bottom: -10vh;
+    margin-bottom: -3vh;
   }
 
   @media (max-width: 500px) {
     margin-top: -30vh;
-    margin-bottom: -7vh;
+    margin-bottom: -3vh;
   }
 `;
 
