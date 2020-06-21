@@ -77,11 +77,11 @@ const StripeTitle = css`
   color: white;
 
   @media (max-width: 800px) {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   @media (max-width: 500px) {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 `;
 

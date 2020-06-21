@@ -258,14 +258,14 @@ export const pageQuery = graphql`
 `;
 
 const Logo = css`
-  height: 200px;
+  height: 180px;
 
   @media (max-width: 800px) {
-    height: 150px;
+    height: 120px;
   }
 
   @media (max-width: 500px) {
-    height: 100px;
+    height: 80px;
   }
 `;
 
