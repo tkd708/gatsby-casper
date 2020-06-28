@@ -126,7 +126,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           description="The personal website of Naoya Takeda, a Ph.D. candidate at Queensland University of Technology (Brisbane, Australia) from Japan."
           link="about"
           side="row"
-          titleBackColor="#800000"
+          titleBackColor="#708090"
         />
         <StripeSection
           image={props.data.stripe2.childImageSharp.fixed.src}
@@ -134,7 +134,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           description="Research in Agricultural and Environmental sciences, consisting of field experiments as well as modelling and simulation analyses. Experiences in rice (Japan and Colombia) and sugarcane (Australia) cropping systems."
           link="research"
           side="row-reverse"
-          titleBackColor="#556B2F"
+          titleBackColor="#708090"
         />
         <StripeSection
           image={props.data.stripe3.childImageSharp.fixed.src}
@@ -142,7 +142,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           description="Software development with R statistical software, React (web site and web application) and React Native (with Expo for mobile application)"
           link="software"
           side="row"
-          titleBackColor="#4682B4"
+          titleBackColor="#708090"
         />
         <main id="site-main" css={[SiteMain, outer]}>
           <div css={[inner, Posts]}>
