@@ -261,7 +261,7 @@ const SiteNavRight = styled.div`
   height: 64px;
 
   @media (max-width: 700px) {
-    display: none;
+    /* display: none; */
   }
 `;
 
