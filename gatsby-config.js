@@ -4,7 +4,8 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Naoya Takeda',
-    description: 'The personal website of Naoya Takeda',
+    description:
+      'The personal website of Naoya Takeda, a PhD candidate at Queensland University of Technology based in Brisbane, Australia. My major is agricultural and environmental sciences, currently working on greenhouse gas emissions induced by nitrogen fertiliser in sugarcane systems. I also started developing web and mobile applications.',
     siteUrl: 'https://naoya-takeda.netlify.app', // full path to blog - no ending slash
   },
   mapping: {
@@ -12,10 +13,32 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-breadcrumb',
+      options: {
+        useAutoGen: true,
+        trailingSlashes: true,
+        defaultCrumb: {
+          location: {
+            pathname: '/',
+          },
+          crumbLabel: 'Home',
+          crumbSeparator: ' / ',
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         output: '/sitemap.xml',
         exclude: [],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://naoya-takeda.netlify.app',
+        sitemap: 'https://naoya-takeda.netlify.app/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {

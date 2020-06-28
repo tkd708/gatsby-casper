@@ -57,6 +57,13 @@ export interface IndexProps {
   };
 }
 
+const metaData = {
+  url: 'https://naoya-takeda.netlify.app/software',
+  title: 'Software - Naoya Takeda',
+  description:
+    'Software development activities of Naoya Takeda, using R, React and React Native for web and mobile application.',
+};
+
 const SoftwarePage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
 
@@ -64,13 +71,13 @@ const SoftwarePage: React.FC<IndexProps> = props => {
     <IndexLayout css={HomePosts}>
       <Helmet>
         <html lang={config.lang} />
-        <title>{config.title}</title>
-        <meta name="description" content={config.description} />
+        <title>{metaData.title}</title>
+        <meta name="description" content={metaData.description} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={config.title} />
-        <meta property="og:description" content={config.description} />
-        <meta property="og:url" content={config.siteUrl} />
+        <meta property="og:title" content={metaData.title} />
+        <meta property="og:description" content={metaData.description} />
+        <meta property="og:url" content={metaData.url} />
         <meta
           property="og:image"
           content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
@@ -80,9 +87,9 @@ const SoftwarePage: React.FC<IndexProps> = props => {
           <meta name="google-site-verification" content={config.googleSiteVerification} />
         )}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={config.title} />
-        <meta name="twitter:description" content={config.description} />
-        <meta name="twitter:url" content={config.siteUrl} />
+        <meta name="twitter:title" content={metaData.title} />
+        <meta name="twitter:description" content={metaData.description} />
+        <meta name="twitter:url" content={metaData.url} />
         <meta
           name="twitter:image"
           content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}

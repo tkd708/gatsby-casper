@@ -23,6 +23,7 @@ import {
   SiteNavMain,
 } from '../styles/shared';
 import { NoImage, PostFull, PostFullHeader, PostFullTitle } from '../templates/post';
+import config from '../website-config';
 import { colors } from '../styles/colors';
 
 const PageTemplate = css`
@@ -50,11 +51,50 @@ export interface AboutProps {
   };
 }
 
+const metaData = {
+  url: 'https://naoya-takeda.netlify.app/about',
+  title: 'About - Naoya Takeda',
+  description: 'About Naoya Takeda, his background, experiences and future plans.',
+};
+
 const AboutPage: React.FC<AboutProps> = props => {
+  const { width, height } = props.data.header.childImageSharp.fixed;
+
   return (
     <IndexLayout>
       <Helmet>
+        <html lang={config.lang} />
         <title>About</title>
+        <meta name="description" content={metaData.description} />
+        <meta property="og:site_name" content="Naoya Takeda" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={metaData.title} />
+        <meta property="og:description" content={metaData.description} />
+        <meta property="og:url" content="https://naoya-takeda.netlify.app/about" />
+        <meta
+          property="og:image"
+          content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
+        />
+        {config.facebook && <meta property="article:publisher" content={config.facebook} />}
+        {config.googleSiteVerification && (
+          <meta name="google-site-verification" content={config.googleSiteVerification} />
+        )}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metaData.title} />
+        <meta name="twitter:description" content={metaData.description} />
+        <meta name="twitter:url" content={metaData.siteUrl} />
+        <meta
+          name="twitter:image"
+          content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
+        />
+        {config.twitter && (
+          <meta
+            name="twitter:site"
+            content={`@${config.twitter.split('https://twitter.com/')[1]}`}
+          />
+        )}
+        <meta property="og:image:width" content={width.toString()} />
+        <meta property="og:image:height" content={height.toString()} />{' '}
       </Helmet>
       <Wrapper css={PageTemplate}>
         <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
