@@ -13,6 +13,8 @@ import { colors } from '../../styles/colors';
 import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
 
+import Search from '../search/index';
+
 interface SiteNavProps {
   isHome?: boolean;
   isPost?: boolean;
@@ -112,6 +114,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
           </SiteNavContent>
         </SiteNavLeft>
         <SiteNavRight>
+          <Search />
           {/* 
           <SocialLinks>
             {config.facebook && (
@@ -170,7 +173,7 @@ const SiteNavStyles = css`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   height: 64px;
   font-size: 1.3rem;
 `;
