@@ -105,6 +105,9 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem">
                 <Link to="/publication">Publication</Link>
               </li>
+              <li role="menuitem">
+                <Search css={SearchBar} />
+              </li>
             </ul>
             {isPost && (
               <NavPostTitle ref={this.titleRef} className="nav-post-title">
@@ -183,7 +186,8 @@ const SiteNavLeft = styled.div`
   display: flex;
   align-items: center;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
+  /* overflow-y: hidden; */
   -webkit-overflow-scrolling: touch;
   margin-right: 10px;
   padding: 10px 0 80px;
@@ -252,6 +256,17 @@ const NavStyles = css`
   }
 `;
 
+const SearchBar = css`
+  position: relative;
+  margin-top: 5px;
+  margin-left: 5px;
+  align-self: flex-end;
+
+  @media (min-width: 700px) {
+    display: none;
+  }
+`;
+
 const SiteNavRight = styled.div`
   flex: 0 1 auto;
   display: flex;
@@ -261,7 +276,7 @@ const SiteNavRight = styled.div`
   height: 64px;
 
   @media (max-width: 700px) {
-    /* display: none; */
+    display: none;
   }
 `;
 
