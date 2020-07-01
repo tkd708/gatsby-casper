@@ -12,6 +12,7 @@ import { colors } from '../../styles/colors';
 //import { Twitter } from '../icons/twitter';
 import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
+import { FaBars } from 'react-icons/fa';
 
 import Search from '../search/index';
 
@@ -105,9 +106,6 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem">
                 <Link to="/publication">Publication</Link>
               </li>
-              <li role="menuitem">
-                <Search css={SearchBar} />
-              </li>
             </ul>
             {isPost && (
               <NavPostTitle ref={this.titleRef} className="nav-post-title">
@@ -117,7 +115,8 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
           </SiteNavContent>
         </SiteNavLeft>
         <SiteNavRight>
-          <Search />
+          <FaBars css={Hamburger} onClick={() => console.log('test')} />
+          <Search css={SearchBar} />
           {/* 
           <SocialLinks>
             {config.facebook && (
@@ -207,6 +206,12 @@ const SiteNavLeft = styled.div`
 const SiteNavContent = styled.div`
   position: relative;
   align-self: flex-start;
+
+  @media (max-width: 500px) {
+    li {
+      display: none;
+    }
+  }
 `;
 
 const NavStyles = css`
@@ -256,17 +261,6 @@ const NavStyles = css`
   }
 `;
 
-const SearchBar = css`
-  position: relative;
-  margin-top: 5px;
-  margin-left: 5px;
-  align-self: flex-end;
-
-  @media (min-width: 700px) {
-    display: none;
-  }
-`;
-
 const SiteNavRight = styled.div`
   flex: 0 1 auto;
   display: flex;
@@ -274,8 +268,22 @@ const SiteNavRight = styled.div`
   justify-content: flex-end;
   padding: 10px 0;
   height: 64px;
+`;
 
-  @media (max-width: 700px) {
+const Hamburger = css`
+  margin-right: 20px;
+  color: white;
+  font-size: 2em;
+
+  @media (min-width: 500px) {
+    display: none;
+  }
+`;
+
+const SearchBar = css`
+  margin-right: 20px;
+
+  @media (max-width: 500px) {
     display: none;
   }
 `;
@@ -326,6 +334,19 @@ const NavPostTitle = styled.span`
 `;
 
 const HideNav = css`
+  ul {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-175%);
+  }
+  .nav-post-title {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const HamburgerNav = css`
   ul {
     visibility: hidden;
     opacity: 0;
