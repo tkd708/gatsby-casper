@@ -102,23 +102,25 @@ const IndexPage: React.FC<IndexProps> = props => {
             backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
           }}
         >
-          <div css={inner}>
-            <SiteNav isHome />
-            <SiteHeaderContent className="site-header-conent">
-              <SiteTitle className="site-title" css={IndexTitle}>
-                {props.data.logo ? (
-                  <img
-                    css={Logo}
-                    src={props.data.logo.childImageSharp.fixed.src}
-                    alt={config.title}
-                  />
-                ) : (
-                  config.title
-                )}
-              </SiteTitle>
-              <SiteDescription>{config.description}</SiteDescription>
-            </SiteHeaderContent>
+          <div css={[outer, SiteNavMain]}>
+            <div css={inner}>
+              <SiteNav isHome={false} />
+            </div>
           </div>
+          <SiteHeaderContent className="site-header-conent">
+            <SiteTitle className="site-title" css={IndexTitle}>
+              {props.data.logo ? (
+                <img
+                  css={Logo}
+                  src={props.data.logo.childImageSharp.fixed.src}
+                  alt={config.title}
+                />
+              ) : (
+                config.title
+              )}
+            </SiteTitle>
+            <SiteDescription>{config.description}</SiteDescription>
+          </SiteHeaderContent>
         </div>
         <StripeSection
           image={props.data.stripe1.childImageSharp.fixed.src}
@@ -270,16 +272,16 @@ const Logo = css`
 `;
 
 const IndexTitle = css`
-  margin-top: -20vh;
+  margin-top: -5vh;
   margin-bottom: -5vh;
 
   @media (max-width: 800px) {
-    margin-top: -25vh;
+    margin-top: -5vh;
     margin-bottom: -3vh;
   }
 
   @media (max-width: 500px) {
-    margin-top: -30vh;
+    margin-top: -10vh;
     margin-bottom: -3vh;
   }
 `;

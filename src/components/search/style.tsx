@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
     font-size: 0.88rem;
     padding-right: 10px;
     line-height: 1.8;
-    width: ${props => (props.focus ? '200px' : '100px')};
+    width: ${props => (props.focus ? '150px' : '100px')};
     transition: 0.3s ease;
     color: var(--text);
     letter-spacing: 0.03rem;
@@ -52,7 +52,7 @@ export const Wrapper = styled.div`
   }
   @media screen and (max-width: 780px) {
     input {
-      width: ${props => (props.focus ? '150px' : '100px')};
+      width: ${props => (props.focus ? '120px' : '100px')};
     }
   }
 `;

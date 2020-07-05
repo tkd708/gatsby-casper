@@ -6,10 +6,6 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 
 import { colors } from '../../styles/colors';
-//import { SocialLink, SocialLinkFb } from '../../styles/shared';
-//import config from '../../website-config';
-//import { Facebook } from '../icons/facebook';
-//import { Twitter } from '../icons/twitter';
 import { SubscribeModal } from '../subscribe/SubscribeModal';
 import { SiteNavLogo } from './SiteNavLogo';
 import { FaBars } from 'react-icons/fa';
@@ -24,6 +20,7 @@ interface SiteNavProps {
 
 interface SiteNavState {
   showTitle: boolean;
+  showDrawer: boolean;
 }
 
 class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
@@ -31,7 +28,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
   titleRef = React.createRef<HTMLSpanElement>();
   lastScrollY = 0;
   ticking = false;
-  state = { showTitle: false };
+  state = { showTitle: false, showDrawer: false };
 
   openModal = () => {
     if (this.subscribe.current) {
@@ -82,6 +79,17 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
     this.ticking = false;
   };
 
+  toggleHamburger = () => {
+    this.setState(
+      {
+        showDrawer: !this.state.showDrawer,
+      },
+      () => {
+        console.log('drawer on');
+      },
+    );
+  };
+
   render(): JSX.Element {
     const { isHome = false, isPost = false, post = {} } = this.props;
     return (
@@ -89,7 +97,8 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
         <SiteNavLeft className="site-nav-left">
           {!isHome && <SiteNavLogo />}
           <SiteNavContent css={[this.state.showTitle ? HideNav : '']}>
-            <ul css={NavStyles} role="menu">
+            {/* <div css={[DarkBackground, this.state.showDrawer ? DarkBackgroundOn : '']}> */}
+            <ul css={[NavStyles, this.state.showDrawer ? DrawerNav : '']} role="menu">
               {/* TODO: mark current nav item - add class nav-current */}
               <li role="menuitem">
                 <Link to="/about">About</Link>
@@ -106,6 +115,9 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem">
                 <Link to="/publication">Publication</Link>
               </li>
+              <li role="menuitem" css={liSearchBar}>
+                <Search css={SearchBar} />
+              </li>
             </ul>
             {isPost && (
               <NavPostTitle ref={this.titleRef} className="nav-post-title">
@@ -115,39 +127,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
           </SiteNavContent>
         </SiteNavLeft>
         <SiteNavRight>
-          <FaBars css={Hamburger} onClick={() => console.log('test')} />
-          <Search css={SearchBar} />
-          {/* 
-          <SocialLinks>
-            {config.facebook && (
-              <a
-                className="social-link-fb"
-                css={[SocialLink, SocialLinkFb]}
-                href={config.facebook}
-                target="_blank"
-                title="Facebook"
-                rel="noopener noreferrer"
-              >
-                <Facebook />
-              </a>
-            )}
-            {config.twitter && (
-              <a
-                css={SocialLink}
-                href={config.twitter}
-                title="Twitter"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter />
-              </a>
-            )}
-          </SocialLinks>
-          {config.showSubscribe && (
-            <SubscribeButton onClick={this.openModal}>Subscribe</SubscribeButton>
-          )}
-          {config.showSubscribe && <SubscribeModal ref={this.subscribe} />}
-          */}
+          <FaBars css={Hamburger} onClick={() => this.toggleHamburger()} />
         </SiteNavRight>
       </nav>
     );
@@ -171,7 +151,7 @@ export const SiteNavMain = css`
 
 const SiteNavStyles = css`
   position: relative;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -185,40 +165,28 @@ const SiteNavLeft = styled.div`
   display: flex;
   align-items: center;
   overflow-x: auto;
-  overflow-y: auto;
   /* overflow-y: hidden; */
   -webkit-overflow-scrolling: touch;
   margin-right: 10px;
+  margin-left: 5vw;
   padding: 10px 0 80px;
   font-weight: 500;
   letter-spacing: 0.2px;
   text-transform: uppercase;
   white-space: nowrap;
-
   -ms-overflow-scrolling: touch;
-
-  @media (max-width: 700px) {
-    margin-right: 0;
-    padding-left: 5vw;
-  }
 `;
 
 const SiteNavContent = styled.div`
   position: relative;
   align-self: flex-start;
-
-  @media (max-width: 500px) {
-    li {
-      display: none;
-    }
-  }
 `;
 
 const NavStyles = css`
   position: absolute;
   z-index: 1000;
   display: flex;
-  margin: 0 0 0 -12px;
+  margin: 0 0 0 0 px;
   padding: 0;
   list-style: none;
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -227,6 +195,11 @@ const NavStyles = css`
     display: block;
     margin: 0;
     padding: 0;
+
+    @media (max-width: 600px) {
+      display: none;
+      visibility: none;
+    }
   }
 
   li a {
@@ -275,39 +248,24 @@ const Hamburger = css`
   color: white;
   font-size: 2em;
 
-  @media (min-width: 500px) {
+  @media (min-width: 600px) {
     display: none;
   }
+`;
+
+const liSearchBar = css`
+  position: relative;
+  flex: 0 1 auto;
+  align-self: center;
+  justify-self: flex-end;
+  margin-left: 50vw;
+  padding: 50px 0;
 `;
 
 const SearchBar = css`
   margin-right: 20px;
 
-  @media (max-width: 500px) {
-    display: none;
-  }
-`;
-
-const SocialLinks = styled.div`
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-`;
-
-const SubscribeButton = styled.a`
-  display: block;
-  padding: 4px 10px;
-  margin: 0 0 0 10px;
-  border: #fff 1px solid;
-  color: #fff;
-  line-height: 1em;
-  border-radius: 10px;
-  opacity: 0.8;
-
-  :hover {
-    text-decoration: none;
-    opacity: 1;
-    cursor: pointer;
+  @media (max-width: 600px) {
   }
 `;
 
@@ -335,10 +293,13 @@ const NavPostTitle = styled.span`
 
 const HideNav = css`
   ul {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-175%);
+    @media (min-width: 600px) {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(-175%);
+    }
   }
+
   .nav-post-title {
     visibility: visible;
     opacity: 1;
@@ -346,16 +307,19 @@ const HideNav = css`
   }
 `;
 
-const HamburgerNav = css`
-  ul {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-175%);
-  }
-  .nav-post-title {
+const DrawerNav = css`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  left: 0;
+  top: 64px;
+  width: 100vw;
+
+  li {
     visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
+    display: block;
+    background: rgba(0, 0, 0, 0.6);
   }
 `;
 
