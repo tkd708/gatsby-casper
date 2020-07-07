@@ -3,7 +3,7 @@ layout: post
 title: 'Rice in Latin America and the Caribbean'
 author: [Naoya]
 projects: ['msc']
-image: ../img/ibague3.jpg
+image: ../img/ibague3.JPG
 date: '2020-07-07T10:00:00.000Z'
 tags:
   - Research
@@ -20,9 +20,9 @@ Among the rice producing countries, those in the LAC region have relatively rece
 
 More than two-thirds of Latin America’s arable lands are in lowland ecosystems and rice is well adapted to the wet soils common in lowlands (McLean et al., 2013). The distribution of major ecosystems for rice production in LAC and the three different rice production systems (Irrigated lowland, rainfed lowland, and upland) are summarized below (Table 1 and Table 2). Among the LAC countries, Brazil is the biggest rice producer and heavily biased to upland rice cultivation, resulting in low yield below 3.0 t/ha on average (Takamiya & Tsutsui, 2000). Cultivated land area for rice in Brazil accounts for 65% of all the rice area and for 62% of upland rice area in the LAC region. Regarding to production, Brazil produces 52% of all irrigated rice, 38% of all rainfed rice, and 92% of all upland rice in the region. Rice in Brazil is mostly grown under upland conditions with acid soils and results in low yield, while the majority of rice in other countries is grown under irrigated conditions with more fertile soils.
 
-![Table 1 Distribution of rice production regions among eco-systems in the LAC region (data from McLean et al., (2013))](img/lac_rice_table1.png)
+![Table 1 Distribution of rice production regions among eco-systems in the LAC region (data from McLean et al., (2013))](../img/lac_rice_table1.png)
 
-![Table 2 Rice production, rice cultivated area, and grain yield among the cultivation systems in the LAC region](img/lac_rice_table2.png)
+![Table 2 Rice production, rice cultivated area, and grain yield among the cultivation systems in the LAC region](../img/lac_rice_table2.png)
 
 The characteristics of the rice cultivation in the LAC region are large farm lands (15–50 ha on average), high rate of mechanization (94%) and irrigation (59%) and dry direct seeding, while only 6% of the total rice area adopts the Asian transplanting system (McLean et al., 2013; Singh et al., 2017). Also, practices with high dose of purchased inputs, such as commercial varieties, water, fertilizer, and agrochemicals are typically conducted in the region (McLean et al., 2013). These features are resulted from the situation of the region where abundant lands are available but labor is scarce and costly. However, improvement in their crop management to reduce those inputs is currently desired, since the rice production is demanded to be more efficient with less cost as mentioned above. Takamiya & Tsutsui (2000) mentioned that high productivity was achieved by the extensive irrigation networks covering almost the entire paddy field area and irrigation was associated with heavy use of fertilizer along with high-yielding rice varieties. Proper water management, therefore, can play an important part to stable and highly productive rice cultivation in the LAC region.
 
