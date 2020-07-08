@@ -115,9 +115,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem">
                 <Link to="/publication">Publication</Link>
               </li>
-              <li role="menuitem" css={liSearchBar}>
-                <Search css={SearchBar} />
-              </li>
+              <li css={liSearchBar}></li>
             </ul>
             {isPost && (
               <NavPostTitle ref={this.titleRef} className="nav-post-title">
@@ -128,6 +126,7 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
         </SiteNavLeft>
         <SiteNavRight>
           <FaBars css={Hamburger} onClick={() => this.toggleHamburger()} />
+          <Search css={SearchBar} />
         </SiteNavRight>
       </nav>
     );
@@ -165,7 +164,7 @@ const SiteNavLeft = styled.div`
   display: flex;
   align-items: center;
   overflow-x: auto;
-  /* overflow-y: hidden; */
+  overflow-y: hidden;
   -webkit-overflow-scrolling: touch;
   margin-right: 10px;
   margin-left: 5vw;
@@ -196,7 +195,7 @@ const NavStyles = css`
     margin: 0;
     padding: 0;
 
-    @media (max-width: 600px) {
+    @media (max-width: 700px) {
       display: none;
       visibility: none;
     }
@@ -248,24 +247,26 @@ const Hamburger = css`
   color: white;
   font-size: 2em;
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     display: none;
   }
 `;
 
 const liSearchBar = css`
   position: relative;
-  flex: 0 1 auto;
-  align-self: center;
-  justify-self: flex-end;
-  margin-left: 50vw;
   padding: 50px 0;
+
+  @media (min-width: 600px) {
+    align-self: center;
+    justify-self: flex-end;
+  }
 `;
 
 const SearchBar = css`
   margin-right: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
+    display: none;
   }
 `;
 
@@ -293,7 +294,7 @@ const NavPostTitle = styled.span`
 
 const HideNav = css`
   ul {
-    @media (min-width: 600px) {
+    @media (min-width: 700px) {
       visibility: hidden;
       opacity: 0;
       transform: translateY(-175%);
@@ -311,15 +312,15 @@ const DrawerNav = css`
   display: flex;
   flex-direction: column;
   position: fixed;
-  align-items: center;
   left: 0;
   top: 64px;
-  width: 100vw;
 
   li {
     visibility: visible;
+    align-self: center;
     display: block;
-    background: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.7);
   }
 `;
 
