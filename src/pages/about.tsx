@@ -99,9 +99,7 @@ const AboutPage: React.FC<AboutProps> = props => {
       <Wrapper css={PageTemplate}>
         <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
           <div css={[outer, SiteNavMain]}>
-            <div css={inner}>
-              <SiteNav isHome={false} />
-            </div>
+            <SiteNav isHome={false} />
           </div>
         </header>
         <div

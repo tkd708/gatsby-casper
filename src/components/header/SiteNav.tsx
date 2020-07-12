@@ -317,7 +317,6 @@ const DrawerNav = css`
 
   li {
     visibility: visible;
-    align-self: center;
     display: block;
     width: 100vw;
     background: rgba(0, 0, 0, 0.7);

@@ -103,9 +103,7 @@ const IndexPage: React.FC<IndexProps> = props => {
           }}
         >
           <div css={[outer, SiteNavMain]}>
-            <div css={inner}>
-              <SiteNav isHome={false} />
-            </div>
+            <SiteNav isHome={false} />
           </div>
           <SiteHeaderContent className="site-header-conent">
             <SiteTitle className="site-title" css={IndexTitle}>
