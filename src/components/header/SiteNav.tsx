@@ -115,7 +115,6 @@ class SiteNav extends React.Component<SiteNavProps, SiteNavState> {
               <li role="menuitem">
                 <Link to="/publication">Publication</Link>
               </li>
-              <li css={liSearchBar}></li>
             </ul>
             {isPost && (
               <NavPostTitle ref={this.titleRef} className="nav-post-title">
@@ -312,13 +311,14 @@ const DrawerNav = css`
   display: flex;
   flex-direction: column;
   position: fixed;
-  left: 0;
+  align-self: center;
+  /* left: 0; */
   top: 64px;
 
   li {
     visibility: visible;
     display: block;
-    width: 100vw;
+    width: 100%;
     background: rgba(0, 0, 0, 0.7);
   }
 `;

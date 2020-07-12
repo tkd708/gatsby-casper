@@ -5,6 +5,7 @@ author: [Naoya]
 tags: []
 image:
 date: '2020-06-07T10:00:00.000Z'
+excerpt: 'Education and employment records of Naoya Takeda.'
 draft: false
 ---
 

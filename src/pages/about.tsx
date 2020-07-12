@@ -9,7 +9,7 @@ import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
 import { PostFullContent } from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
-import IndexLayout from '../layouts';
+import IndexLayout from '../layouts/';
 import {
   inner,
   outer,
@@ -82,7 +82,7 @@ const AboutPage: React.FC<AboutProps> = props => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metaData.title} />
         <meta name="twitter:description" content={metaData.description} />
-        <meta name="twitter:url" content={metaData.siteUrl} />
+        <meta name="twitter:url" content={metaData.url} />
         <meta
           name="twitter:image"
           content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}

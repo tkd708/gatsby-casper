@@ -11,7 +11,7 @@ import Pagination from '../components/Pagination';
 import { PostCard } from '../components/PostCard';
 import { StripeSection } from '../components/StripeSection';
 import { Wrapper } from '../components/Wrapper';
-import IndexLayout from '../layouts';
+import IndexLayout from '../layouts/';
 import {
   inner,
   outer,

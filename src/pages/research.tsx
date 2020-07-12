@@ -10,7 +10,7 @@ import SiteNav from '../components/header/SiteNav';
 import { PostCard } from '../components/PostCard';
 import { Feature } from '../components/Feature';
 import { Wrapper } from '../components/Wrapper';
-import IndexLayout from '../layouts';
+import IndexLayout from '../layouts/';
 import {
   inner,
   outer,
@@ -104,11 +104,9 @@ const ResearchPage: React.FC<IndexProps> = props => {
         <meta property="og:image:height" content={height.toString()} />
       </Helmet>
       <Wrapper css={PageTemplate}>
-        <header className="site-archive-header no-image" css={[SiteHeader, SiteArchiveHeader]}>
+        <header className="site-header">
           <div css={[outer, SiteNavMain]}>
-            <div css={inner}>
-              <SiteNav isHome={false} />
-            </div>
+            <SiteNav isHome={false} />
           </div>
         </header>
         <div

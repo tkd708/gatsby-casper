@@ -15,7 +15,7 @@ import PostContent from '../components/PostContent';
 import { ReadNext } from '../components/ReadNext';
 //import { Subscribe } from '../components/subscribe/Subscribe';
 import { Wrapper } from '../components/Wrapper';
-import IndexLayout from '../layouts';
+import IndexLayout from '../layouts/';
 import { colors } from '../styles/colors';
 import { inner, outer, SiteMain } from '../styles/shared';
 import config from '../website-config';
@@ -177,9 +177,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
       <Wrapper css={PostTemplate}>
         <header className="site-header">
           <div css={[outer, SiteNavMain]}>
-            <div css={inner}>
-              <SiteNav isPost post={post.frontmatter} />
-            </div>
+            <SiteNav isPost post={post.frontmatter} />
           </div>
         </header>
         <main id="site-main" className="site-main" css={[SiteMain, outer]}>

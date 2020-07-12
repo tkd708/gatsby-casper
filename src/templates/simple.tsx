@@ -12,9 +12,9 @@ import { Footer } from '../components/Footer';
 import SiteNav, { SiteNavMain } from '../components/header/SiteNav';
 import PostContent from '../components/PostContent';
 import { Wrapper } from '../components/Wrapper';
-import IndexLayout from '../layouts';
+import IndexLayout from '../layouts/';
 import { colors } from '../styles/colors';
-import { inner, outer, SiteMain } from '../styles/shared';
+import { inner, outer, SiteArchiveHeader, SiteHeader, SiteMain } from '../styles/shared';
 import config from '../website-config';
 
 export interface Author {
@@ -167,9 +167,7 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
       <Wrapper css={PostTemplate}>
         <header className="site-header">
           <div css={[outer, SiteNavMain]}>
-            <div css={inner}>
-              <SiteNav isPost post={post.frontmatter} />
-            </div>
+            <SiteNav isHome={false} />
           </div>
         </header>
         <main id="site-main" className="site-main" css={[SiteMain, outer]}>
