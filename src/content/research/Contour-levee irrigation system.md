@@ -62,6 +62,9 @@ in the regions (Smith et al., 2007). The irrigation water use was reported as 78
 
 In spite of the constructed levees, considerable amount of irrigated water seems to drain out from the plot along the slope. Comparison of water use in the three irrigation systems in the US indicate the contour-levee irrigation system in sloped rice fields would require almost double of the irrigation water needed for flat fields. Even though this irrigation system is widely practiced in Colombia, the irrigation water use and water use efficiency of rice production under contour-levee irrigation system is yet to be fully understood.
 
+...Thus, we investigated the irrigation water use and efficiency of contour-levee irrigation system on commercial rice farms in Colombia! Hope this article helps you know more about the unique irrigated rice system.
+
+Takeda, N., López-Galvis, L., Pineda, D., Castilla, A., Takahashi, T., Fukuda, S., & Okada, K. (2019). Evaluation of water dynamics of contour-levee irrigation system in sloped rice fields in Colombia. Agricultural Water Management, 217, 107-118.
 https://doi.org/10.1016/j.agwat.2019.02.032
 
 ## References
