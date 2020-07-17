@@ -61,7 +61,7 @@ const metaData = {
   url: 'https://naoya-takeda.netlify.app/software',
   title: 'Software - Naoya Takeda',
   description:
-    'Software development activities of Naoya Takeda, using R, React and React Native for web and mobile application.',
+    'Software development activities of Naoya Takeda, using R, React and React Native for web and mobile application. I will be posting small tips and examples of those softwares as well.',
 };
 
 const SoftwarePage: React.FC<IndexProps> = props => {
