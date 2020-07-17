@@ -1,8 +1,8 @@
 - id: Naoya
   avatar: avatars/logo_initial2.png
   bio: The site owner
-  twitter:
-  facebook:
+  twitter: https://twitter.com/
+  facebook: https://www.facebook.com/
   website: https://naoya-takeda.netlify.app/about
   location: Brisbane
   profile_image: img/blog-index.jpg
