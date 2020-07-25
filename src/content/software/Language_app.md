@@ -32,13 +32,11 @@ https://github.com/tkd708/language-app
 
 まず翻訳機能を使うのに Google の API Key が必要になります。取得方法は下記参照。
 
-[https://cloud.google.com/translate/docs/quickstart-client-libraries/:title]
+https://cloud.google.com/translate/docs/quickstart-client-libraries
 
 で、その API が公開されちゃうと困るので Public にならないようにする処理はこちら。
 
-(今回は実装し損ねたので、const API_KEY = を書き換えてやってくださいな)
-
-[https://dev.to/robertchen234/how-to-use-google-translate-api-27l9/:title]
+https://dev.to/robertchen234/how-to-use-google-translate-api-27l9
 
 さて、翻訳部分の function はこんな感じで書きました。
 
@@ -64,11 +62,11 @@ API Key に加えて、source=の先に翻訳元言語、target=の先に翻訳�
 
 API 使うのに定番の axios、下記がシンプルで分かりやすかった。
 
-[https://weblion303.net/1485/:title]
+https://weblion303.net/1485
 
 Google Translate 実装の部分で参考にしたのはこちら。
 
-[http://blog.zenof.ai/create-a-language-translation-mobile-app-using-react-native-and-google-apis/:title]
+http://blog.zenof.ai/create-a-language-translation-mobile-app-using-react-native-and-google-apis
 
 ## Unstated による状態管理   
 
@@ -76,7 +74,7 @@ Google Translate API を用いて単語を翻訳してタグもつけて(compone
 
 そこで状態管理といえば王道は Redux。。。なのは間違いないと思われますが、下記の記事にある通りこの程度の試作アプリにはコード量も増えてファイル構造も複雑化してかえって苦労するので、より手軽な unstated を採用。実際、Redux より遥かに手軽だと感じました。
 
-[https://qiita.com/kaba/items/b05f680f850dd46548f3/:title]
+https://qiita.com/kaba/items/b05f680f850dd46548f3
 
 1. Store の役割も兼ねる Container を用意する(import した Container を extends)。Component 間をまたいで参照するような Function たちはこの Container の中に格納しました。
 
@@ -134,7 +132,7 @@ this.props.AAA.CCC;
 
 こちらの機能の実装はほとんどが下記の Todo アプリのチュートリアルから。
 
-[https://pusher.com/tutorials/build-to-do-app-react-native-expo/:title]
+https://pusher.com/tutorials/build-to-do-app-react-native-expo
 
 変更点のほとんどが JS 関連のものでした。改めて RN 書くにも JS が基本なんだなと実感。。。
 
@@ -227,7 +225,7 @@ onTagPress = selectedTag => {
 
 AsyncStorage だと JSON 形式のみなので、逐一 Stringify(上記内では saveItems)と Parse(上記内では loadingItems)しなくちゃいけないからあまりお勧めされないらしい。次は SQLite とか使いたいところ、、、
 
-[https://qiita.com/kaba/items/569aafd80889bb5d9328/:title]
+https://qiita.com/kaba/items/569aafd80889bb5d9328
 
 この JSON 縛りのせいだからか(？)、onDoneAddItem のところで、ID(uuid から生成)を key とし、翻訳前後の単語やタグなどの情報を value とする、入れ子の object 構造を prevState に書き足していくという形式をとっている。そして更新された State を saveItem に送って AsyncStorage に書き込む。
 
