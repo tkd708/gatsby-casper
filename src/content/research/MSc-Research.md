@@ -4,17 +4,28 @@ title: 'MSc Research'
 author: [Naoya]
 projects: ['msc']
 image: ../img/demo1.jpg
-date: '1863-11-19T10:00:00.000Z'
+date: '2020-08-01T10:00:00.000Z'
 tags:
   - Research
-  - MSc
+  - Latin America and the Caribbean
   - Colombia
-  - rice
+  - Rice
+  - Irrigation
+  - Contour-levee
+  - Crop models
+  - APSIM
+  - Oryza
+  - MSc
 draft: false
+excerpt: A summary of the articles related to my MSc research on rice cultivation in Colombia.
 ---
 
-Fourscore and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.
+This is an article summarising the articles related to my MSc research on rice cultivation in Colombia.
 
-Now we are engaged in a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long endure. We are met on a great battle-field of that war. We have come to dedicate a portion of that field, as a final resting place for those who here gave their lives that that nation might live. It is altogether fitting and proper that we should do this.
+I will post one by one focusing on a topic and summarise them here!
 
-But, in a larger sense, we can not dedicate-we can not consecrate-we can not hallow-this ground. The brave men, living and dead, who struggled here, have consecrated it, far above our poor power to add or detract. The world will little note, nor long remember what we say here, but it can never forget what they did here. It is for us the living, rather, to be dedicated here to the unfinished work which they who fought here have thus far so nobly advanced. It is rather for us to be here dedicated to the great task remaining before us-that from these honored dead we take increased devotion to that cause for which they gave the last full measure of devotion-that we here highly resolve that these dead shall not have died in vain-that this nation, under God, shall have a new birth of freedom-and that government of the people, by the people, for the people shall not perish from the earth.
+- [Rice in Latin America and the Caribbean](https://naoya-takeda.netlify.app/research/rice-in-latin-america-and-the-caribbean/)
+
+- [Rice in Colombia](https://naoya-takeda.netlify.app/research/rice-in-colombia/)
+
+- [Contour-levee irrigation system](https://naoya-takeda.netlify.app/research/contour-levee-irrigation-system/)

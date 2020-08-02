@@ -2,7 +2,7 @@
 layout: post
 title: 'A language app using google API, Unstated and Asyncstorage'
 author: [Naoya]
-image: ../img/expo=logo2.jpg
+image: ../img/expo-logo2.jpg
 date: '2019-10-01T23:46:37.121Z'
 draft: false
 tags:

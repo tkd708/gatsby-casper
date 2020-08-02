@@ -3,24 +3,24 @@ layout: post
 title: 'PhD research'
 author: [Naoya]
 image: ../img/welcome-to-ghost.jpg
-date: '2020-05-06T23:46:37.121Z'
-draft: false
+date: '2020-08-01T10:00:00.000Z'
 tags:
   - Research
   - PhD
   - Australia
   - Sugarcane
-excerpt: Welcome, it's great to have you here. We know that first impressions are important, so we've populated your new site with some initial getting started posts that will help you get familiar with everything in no time.
+  - N fertiliser
+  - N2O
+  - GHG
+  - NUE
+  - N fertiliser reocvery
+  - APSIM
+draft: false
+excerpt: A summary of the articles related to my PhD research on N fertiliser rates and N2O emissions in Australian sugarcane systems.
 ---
 
-**A few things you should know upfront**:
+This is an article summarising the articles related to my MSc research on rice cultivation in Colombia.
 
-1. Install Ghost.
-2. Develop the site.
-3. Deploy at Netlify.
+I will post one by one focusing on a topic and summarise them here!
 
-## Next up, the editor
-
-The main thing you'll want to read about next is probably: the Ghost editor. This is where the good stuff happens.
-
-> By the way, once you're done reading, you can simply delete the default **Ghost** user from your team to remove all of these introductory posts!
+- [Greenhouse gas - N2O](https://naoya-takeda.netlify.app/research/greenhouse-gas-n2o/)

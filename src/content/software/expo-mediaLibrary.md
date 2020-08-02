@@ -2,7 +2,7 @@
 layout: post
 title: 'Expo MediaLibrary to select multiple photos'
 author: [Naoya]
-image: ../img/expo=logo2.jpg
+image: ../img/expo-logo2.jpg
 date: '2020-07-25T23:46:37.121Z'
 draft: false
 tags:
