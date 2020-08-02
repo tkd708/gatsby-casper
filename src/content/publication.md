@@ -30,7 +30,15 @@ https://doi.org/10.2525/ecb.57.15
 
 ---
 
-(To be held) Oral Presentation at APSIM symposium 2020, University of Queensland, Brisbane
+- (To be held) Oral Presentation at Soil Science Australia and the New Zealand Society of Soil Science Joint Conference, Cairns
+
+<div style="text-align: right;">June 2021</div>
+
+**Title**: Responses of fertiliser N recoveries to N fertiliser rates in a tropical sugarcane system
+<br>
+<br>
+
+- (To be held) Oral Presentation at APSIM symposium 2020, University of Queensland, Brisbane
 
 <div style="text-align: right;">Nov. 2020</div>
 
@@ -38,7 +46,7 @@ https://doi.org/10.2525/ecb.57.15
 <br>
 <br>
 
-Oral Presentation at Crop Science Society of Japan 246th Annual Meeting (5-6 Sept. 2018), Hokkaido University, Hokkaido
+- Oral Presentation at Crop Science Society of Japan 246th Annual Meeting (5-6 Sept. 2018), Hokkaido University, Hokkaido
 
 <div style="text-align: right;">6 Sept. 2018</div>
 
@@ -46,7 +54,7 @@ Oral Presentation at Crop Science Society of Japan 246th Annual Meeting (5-6 Sep
 <br>
 <br>
 
-Oral Presentation at Crop Science Society of Japan 243rd Annual Meeting (29-30 Mar. 2017), University of Tokyo, Tokyo
+- Oral Presentation at Crop Science Society of Japan 243rd Annual Meeting (29-30 Mar. 2017), University of Tokyo, Tokyo
 
 <div style="text-align: right;">29 Mar. 2017</div>
 

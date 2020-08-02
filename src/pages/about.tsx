@@ -120,30 +120,57 @@ const AboutPage: React.FC<AboutProps> = props => {
             <article className="post page" css={[PostFull, NoImage]}>
               <PostFullContent className="post-full-content">
                 <div className="post-content">
-                  <h5>The platform integrating activities of Naoya Takeda</h5>
-                  <p> Sustainable Agriculture</p>
+                  <h1>About - Naoya Takeda</h1>
+                  <br />
+                  <h2> Vision </h2>
+                  <hr />
+                  <p>Sustainable and thriving future</p>
+                  <br />
+
+                  <h2> Mission </h2>
+                  <hr />
+                  <p>
+                    Contributing to sustainable agricutlural development through scientific research
+                    and engineering approaches!
+                  </p>
+                  <br />
+
+                  <h2> Activities </h2>
+                  <hr />
+
+                  <h3> Sustainable Agriculture</h3>
                   <p>
                     Agriculture is an essential industry to supply foods around the world. However
                     the resource use efficiency must be improved to achieve sufficient agricultural
                     production under resource-limited conditions and to reduce environmental
                     impacts.
                   </p>
-                  <p> Data Analysis</p>
+                  <br />
+
+                  <h3> Data Analysis</h3>
                   <p>
                     Data is being accumulated more rapidly from diverse sections and analytical
                     methodolosies have been developed as well. I want to extract information from
                     the massive data using data visualisation, statistical analysis, modelling and
                     simulation approaches.
                   </p>
-                  <p>Software</p>
+                  <br />
+
+                  <h3>Software</h3>
                   <p>
                     Development The internet infrastructure and hardwares have been developing fast
                     and enabling a lot more things online. I would like to provide solutions to wide
-                    range of social issues by developping software applications.{' '}
+                    range of social issues by developping software applications.
                   </p>
-                  <p>Languages</p>
-                  <p>Languages are still the key to expand the world you can access to...</p>
-                  <p>This page will be about my vision, mission and mid-term goals.</p>
+                  <br />
+
+                  <h3>Languages</h3>
+                  <p>
+                    Languages are the key to expand the world you can access to. I'm a native
+                    speaker of Japanese and fluent in English. I have learnt Spanish to an
+                    upper-intermediate level and been working on French over a year.
+                  </p>
+                  <br />
                 </div>
               </PostFullContent>
             </article>

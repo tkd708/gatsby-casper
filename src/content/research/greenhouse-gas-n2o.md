@@ -4,7 +4,7 @@ title: 'Greenhouse gas - N2O'
 author: [Naoya]
 projects: ['msc']
 image: ../img/ghg-effect.jpg
-date: '2020-07-17T10:00:00.000Z'
+date: '2020-08-02T10:00:00.000Z'
 tags:
   - Research
   - PhD
