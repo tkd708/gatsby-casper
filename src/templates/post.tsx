@@ -251,6 +251,10 @@ const PageTemplate: React.FC<PageTemplateProps> = props => {
   );
 };
 
+const img = css`
+  max-width: 100%;
+`;
+
 const PostTemplate = css`
   .site-main {
     margin-top: 64px;
