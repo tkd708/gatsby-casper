@@ -3,7 +3,7 @@ layout: post
 title: 'Greenhouse gas - N2O'
 author: [Naoya]
 projects: ['msc']
-image: ../img/contour-levee4.PNG
+image: ../img/ghg-effect.jpg
 date: '2020-07-17T10:00:00.000Z'
 tags:
   - Research

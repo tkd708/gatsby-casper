@@ -127,7 +127,8 @@ const IndexLayout: React.FC<IndexProps> = props => {
             border-collapse: collapse;
           }
           img {
-            max-width: 100%;
+            //max-width: 100%;
+            width: 100%;
           }
           html {
             box-sizing: border-box;

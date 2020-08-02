@@ -21,35 +21,56 @@ excerpt: A brief introduction of contour-levee irrigation system, which is a lan
 Contour-levee irrigation system is a land-management and irrigation practice for lowland rice cultivation in sloped fields and practiced commonly in a part of US, Latin America and the Caribbean. For example in Colombia, the contour-levee irrigation system accounts for 70.1% of the irrigated rice area (FEDEARROZ, 2017), including the major rice producing departments, Tolima, Huila, Meta, and Casanare (Fig. 1). Similar practices of the contour-levee irrigation system are adopted in other major irrigated rice producing areas in the LAC region such as those in Argentina (Marano and Filippi, 2015), Brazil (Takamiya and Tsutsui, 2000), and Uruguay (Battallo et al., 2013).
 
 ![](../img/contour-levee1.PNG)
+
 Figure 1. Distribution of irrigation systems in Colombia shown as ratio between contour-levee irrigation system (green, “Corrido”), and flat-flooded system (red, “Inundación”) in each municipality represented by each circle (modified figure from FEDEARROZ (2017))
 
+<br>
+
 ## Colombia
+
+---
 
 Rice farmers construct levees (bunds, and called “caballon” in the local language, Spanish) along the contour lines to hold water within the plot, which is easily lost via runoff otherwise (Pineda and Montaña, 2015). The height of the contour levees is approximately 12 cm along the contour lines using a machinary called “Taipa”, which enables construction of such low levee bunds without deep depression aside (Fig. 2.). Rice seeds can be sown over the entire plot including the top part of the contour levees by direct dry-seeding machines to maintain the spatial uniformity of rice growth is (Fig. 3.). Local farmers commonly plough and level the land before construction of the levees but do not puddle the field.
 
 ![](../img/contour-levee2.PNG)
+
 Figure 2. Construction of contour levees with “Taipa” (picture from FEDEARROZ (2015))
 
 ![](../img/contour-levee3.PNG)
+
 Figure 3. Sowing over the entire plot including the top part of levee bunds.
 
 Irrigation is started after sowing and is intermittently applied from an inlet at the highest side of the plot, and the water flows down and drains out through an outlet at the lowest side as runoff (Fig. 4). Observing the first irrigation, some spots of the contour levees which have overflow of irrigation water are destructed to be slits to prevent other parts of the levees from being damaged and to enable irrigation water to flow down smoothly (Fig. 5).
 
 ![](../img/contour-levee4.PNG)
+
 Figure 4. Contour-levee irrigation system with arrows showing the constructed levees and flush irrigation is applied from the inlet at the upper side.
 
 ![](../img/contour-levee5.PNG)
+
 Figure 5. Slits in contour levees allowing water flow down the plot.
+
+<br>
 
 ## Argentina
 
+---
+
 The National Agricultural Technology Institute (INTA) has recommendation of a similar irrigation practice for rice farmers in Argentine (Kraemer et al., 2011). Low height of levees is regarded as very important and ideally ranging from 13 to 17 cm in order to allow machines to enter the plot, to avoid water logging problems in the deep spots, and to mitigate the heterogeneity of the field. Ponded water table is recommended to be maintained at 5-10cm in vegetative phase after 14 to 17 days after emergence, at 15-25 cm in reproductive phase, and gradually decreased from the period 15 to 20 days after flowering. Regarding the speed of irrigation, it is recommended to reach the entire plot within 5 days.
+
+<br>
 
 ## Uruguay
 
+---
+
 In Uruguay, Asociación de Cultivadores de Arroz (ACA) has developed rice cultivation recommendation, and implementation of a very similar irrigation system is described (Battallo et al., 2013). The height of levees should be lower than 15 cm so that the ponded water table stays low and irrigation water requirement would not become high, and also that the top of the levees remains wet. Alike the instruction of Argentine, irrigation should be continued from 15-30 days after emergence until the maturity. In addition, irrigation water consumption is reported to range typically from 1100 to 1400 mm ha-1 to irrigate for about 100 days.
 
+<br>
+
 ## US
+
+---
 
 Arkansas, Louisiana, and Mississippi in the US also have rice production under the contour-levee irrigation system together with straight-levee and zero-grade systems. Contour levees with height of 30-45 cm are constructed at approximately every 60 mm in elevation drop by pushing up after dry seeding the crop and adjustable spills are placed in the levees (Henry et al., 2016). Managing the irrigation system requires expert knowledge on how much water to pump so that all paddies are filled with little runoff from the lowest paddy (Vories, et al., 2005). In addition, the curvature of levee bunds makes maintainance of them and the harvest more labour-intensive and difficult (Laughlin & Mehrle, 1996).
 
@@ -58,7 +79,11 @@ Straight-levee and zero-grade practices also became common for rice production a
 Among the three irrigation systems, contour-levee fields have minimal land improvements, and the levees follow the natural contour of the land. In Arkansas, almost half of the total rice acres has the contour-levee irrigation system, about 45 % has straight-levee system, and only about 5 % has zerograde system (Henry et al., 2016). Traditionally, the entire field under any of the three irrigation system is flooded with constant depth of approximately 80–150 mm throughout much of the growing season
 in the regions (Smith et al., 2007). The irrigation water use was reported as 789-1100, 653-950, and 382-500 mm in contour-levee, straight-levee, and zero-grade systems in Arkansas and Mississippi (Henry et al., 2016) (Massey et al., 2014) (Smith et al., 2007). Irrigation water input was generally lower in clay soil compared to silt loam soil, although the difference was not significant (Henry et al., 2012; 2016).
 
+<br>
+
 ## So, how much water is needed?
+
+---
 
 In spite of the constructed levees, considerable amount of irrigated water seems to drain out from the plot along the slope. Comparison of water use in the three irrigation systems in the US indicate the contour-levee irrigation system in sloped rice fields would require almost double of the irrigation water needed for flat fields. Even though this irrigation system is widely practiced in Colombia, the irrigation water use and water use efficiency of rice production under contour-levee irrigation system is yet to be fully understood.
 
@@ -67,7 +92,11 @@ In spite of the constructed levees, considerable amount of irrigated water seems
 Takeda, N., López-Galvis, L., Pineda, D., Castilla, A., Takahashi, T., Fukuda, S., & Okada, K. (2019). Evaluation of water dynamics of contour-levee irrigation system in sloped rice fields in Colombia. Agricultural Water Management, 217, 107-118.
 https://doi.org/10.1016/j.agwat.2019.02.032
 
+<br>
+
 ## References
+
+---
 
 - Battallo, C., Queheille, N., Uraga, R., Gonnet, D., Hill, M., Roel, A., … Pippolo, D. (2013). Guía De Buenas Prácticas En El Cultivo De Arroz En Uruguay. Retrieved from http://www.aca.com.uy/manual-de-buenas-practicas-agricolas
 

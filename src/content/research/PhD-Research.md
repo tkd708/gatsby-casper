@@ -2,7 +2,7 @@
 layout: post
 title: 'PhD research'
 author: [Naoya]
-image: ../img/welcome-to-ghost.jpg
+image: ../img/sugar4.png
 date: '2020-08-01T10:00:00.000Z'
 tags:
   - Research

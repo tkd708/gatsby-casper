@@ -3,7 +3,7 @@ layout: post
 title: 'MSc Research'
 author: [Naoya]
 projects: ['msc']
-image: ../img/demo1.jpg
+image: ../img/ibague_field2.jpg
 date: '2020-08-01T10:00:00.000Z'
 tags:
   - Research
