@@ -56,6 +56,16 @@ draft: false
 
 ---
 
+**Research Assisstant at Centre for Agriculture and the Bioeconomy, Brisbane**
+
+<div style="text-align: right;">Mar. 2021 – Dec. 2021</div>
+
+- Worked in a Grain Research & Development Corporation (GRDC) project to examine fertiliser N use efficiency and N loss pathways in grain cropping systems in Australia
+- Testing APSIM (Classic and Next Gen) against <sup>15</sup>N field trials datasets to simulate fertiliser N recovery and N losses
+- Identifying the potential to improve algorithms related to N cyclying processes in APSIM
+
+<br>
+
 **Visiting Researcher at International Center of Tropical Agriculture (CIAT), Cali**
 
 <div style="text-align: right;">Aug. 2017 – Mar. 2018</div>
@@ -96,5 +106,16 @@ draft: false
 - **Japanese** : Native
 - **English** : Advanced (International English Language Testing System – IELTS 7.5)
 - **Spanish** : Upper Intermediate (Diplomas de Español como Lengua Extranjera – DELE B2)
+
+<br>
+
+### SKILLS
+
+---
+
+- **Statistics** : Regression analyses, Parameter optimisation, Sensitivity analyses, Machine learning methods
+- **Programming languages** : R, JavaScript, TypeScript, Node.js, React, React Native, Python
+- **Web services** : Expo, Amazon Web Service, Google Cloud Platform, Firebase, Google Earth Engine
+- **Crop models** : APSIM Classic, APSIM Next Gen, Oryza v3
 
 <br>

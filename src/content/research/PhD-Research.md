@@ -19,7 +19,7 @@ draft: false
 excerpt: A summary of the articles related to my PhD research on N fertiliser rates and N2O emissions in Australian sugarcane systems.
 ---
 
-This is an article summarising the articles related to my MSc research on rice cultivation in Colombia.
+This is an article summarising the articles related to my PhD research on Response of N<sub>2</sub>O emissions and N use efficiency to N fertiliser rates in Australian sugarcane systems.
 
 I will post one by one focusing on a topic and summarise them here!
 
