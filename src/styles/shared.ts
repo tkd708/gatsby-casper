@@ -42,8 +42,11 @@ export const SiteTitle = styled.h1`
   font-size: 7rem;
   font-weight: 400;
   font-family: 'Times New Roman', Times, serif;
-  line-height: 1em;
-  text-decoration: underline;
+  
+  .site-title-underline{
+      line-height: 1em;
+      text-decoration: underline;
+  }
 
   @media (max-width: 800px) {
     font-size: 4rem;
@@ -122,6 +125,10 @@ export const SiteHeaderContent = styled.div`
   align-items: center;
   color: #fff;
   margin-top: 25vh;
+
+    .site-title-black {
+    color: black;   
+  }
 
   @media (max-width: 800px) {
     margin-top: 15vh 1vw;

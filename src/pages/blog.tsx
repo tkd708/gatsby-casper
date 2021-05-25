@@ -7,29 +7,31 @@ import { css } from '@emotion/core';
 
 import { Footer } from '../components/Footer';
 import SiteNav from '../components/header/SiteNav';
-import Pagination from '../components/Pagination';
 import { PostCard } from '../components/PostCard';
-import { StripeSection } from '../components/StripeSection';
+import { Feature } from '../components/Feature';
 import { Wrapper } from '../components/Wrapper';
 import IndexLayout from '../layouts/';
 import {
   inner,
   outer,
   PostFeed,
-  Posts,
-  SiteArchiveHeader,
-  SiteNavMain,
-  SiteDescription,
   SiteHeader,
   SiteHeaderContent,
   SiteHeaderBackgroundImg,
-  SiteMain,
-  SiteTitle,
   SiteHeaderStyles,
+  SiteTitle,
+  SiteDescription,
+  SiteArchiveHeader,
+  SiteNavMain,
+  SiteMain,
+  FeatureSection,
+  FeatureSectionTitle,
+  FeatureList,
   FeedTitle,
 } from '../styles/shared';
 import config from '../website-config';
-import { PageContext } from './post';
+import { NoImage, PostFull, PageContext, PostFullHeader, PostFullTitle } from '../templates/post';
+import { colors } from '../styles/colors';
 
 export interface IndexProps {
   pageContext: {
@@ -55,20 +57,27 @@ export interface IndexProps {
   };
 }
 
-const IndexPage: React.FC<IndexProps> = props => {
+const metaData = {
+  url: 'https://naoya-takeda.netlify.app/blog',
+  title: 'Blog - Naoya Takeda',
+  description:
+    'Blog posts showing a variety of the activities of Naoya Takeda. Research on agricultural and environmental sciences, web and mobile application development and also other side-project activities! ',
+};
+
+const ResearchPage: React.FC<IndexProps> = props => {
   const { width, height } = props.data.header.childImageSharp.fixed;
 
   return (
     <IndexLayout css={HomePosts}>
       <Helmet>
         <html lang={config.lang} />
-        <title>{config.title}</title>
-        <meta name="description" content={config.description} />
+        <title>{metaData.title}</title>
+        <meta name="description" content={metaData.description} />
         <meta property="og:site_name" content={config.title} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={config.title} />
-        <meta property="og:description" content={config.description} />
-        <meta property="og:url" content={config.siteUrl} />
+        <meta property="og:title" content={metaData.title} />
+        <meta property="og:description" content={metaData.description} />
+        <meta property="og:url" content={metaData.url} />
         <meta
           property="og:image"
           content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
@@ -78,9 +87,9 @@ const IndexPage: React.FC<IndexProps> = props => {
           <meta name="google-site-verification" content={config.googleSiteVerification} />
         )}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={config.title} />
-        <meta name="twitter:description" content={config.description} />
-        <meta name="twitter:url" content={config.siteUrl} />
+        <meta name="twitter:title" content={metaData.title} />
+        <meta name="twitter:description" content={metaData.description} />
+        <meta name="twitter:url" content={metaData.url} />
         <meta
           name="twitter:image"
           content={`${config.siteUrl}${props.data.header.childImageSharp.fixed.src}`}
@@ -94,118 +103,64 @@ const IndexPage: React.FC<IndexProps> = props => {
         <meta property="og:image:width" content={width.toString()} />
         <meta property="og:image:height" content={height.toString()} />
       </Helmet>
-      <Wrapper>
-        <div
-          css={[SiteHeaderBackgroundImg]}
-          className="site-header-background"
-          style={{
-            backgroundImage: `url('${props.data.header.childImageSharp.fixed.src}')`,
-          }}
-        >
+      <Wrapper css={PageTemplate}>
+        <header className="site-header">
           <div css={[outer, SiteNavMain]}>
             <SiteNav isHome={false} />
           </div>
+        </header>
+        <div css={inner}>
           <SiteHeaderContent className="site-header-conent">
-            <SiteTitle className="site-title" css={IndexTitle}>
-              {props.data.logo ? (
-                <img
-                  css={Logo}
-                  src={props.data.logo.childImageSharp.fixed.src}
-                  alt={config.title}
-                />
-              ) : (
-                config.title
-              )}
-            </SiteTitle>
-            <SiteDescription>{config.description}</SiteDescription>
+            <SiteTitle className="site-title  site-title-black">Blog</SiteTitle>
           </SiteHeaderContent>
         </div>
-        <StripeSection
-          image={props.data.stripe1.childImageSharp.fixed.src}
-          title="About"
-          description="The personal website of Naoya Takeda, a Ph.D. candidate at Queensland University of Technology (Brisbane, Australia) from Japan."
-          link="about"
-          side="row"
-          titleBackColor="black"
-        />
-        {/* 
-        <StripeSection
-          image={props.data.stripe2.childImageSharp.fixed.src}
-          title="Research"
-          description="Research in Agricultural and Environmental sciences, consisting of field experiments as well as modelling and simulation analyses. Experiences in rice (Japan and Colombia) and sugarcane (Australia) cropping systems."
-          link="research"
-          side="row-reverse"
-          titleBackColor="black"
-        />
-        <StripeSection
-          image={props.data.stripe3.childImageSharp.fixed.src}
-          title="Software"
-          description="Software development with R statistical software, React (web site and web application) and React Native (with Expo for mobile application)"
-          link="software"
-          side="row"
-          titleBackColor="black"
-        />
-        */}
-        <main id="site-main" css={[SiteMain, outer]}>
-          <div css={[inner, Posts]}>
-            <p css={FeedTitle}>Latest stories</p>
-            <div css={[PostFeed]}>
-              {props.data.allMarkdownRemark.edges.slice(0, 4).map((post, index) => {
-                // filter out drafts in production
-                return (
-                  (post.node.frontmatter.draft !== true ||
-                    process.env.NODE_ENV !== 'production') && (
-                    <PostCard key={post.node.fields.slug} post={post.node} large={index === 0} />
-                  )
-                );
-              })}
-            </div>
+        <main id="site-main" className="site-main" css={[SiteMain, outer]}>
+          <div css={inner}>
+            <article className="post page" css={[PostFull, NoImage]}>
+              <div css={[PostFeed]}>
+                {props.data.allMarkdownRemark.edges
+                  // .filter(edge => edge.node.frontmatter.tags[0] === 'Research')
+                  .slice(0, 9)
+                  .map((post, index) => {
+                    // filter out drafts in production
+                    return (
+                      (post.node.frontmatter.draft !== true ||
+                        process.env.NODE_ENV !== 'production') && (
+                        <PostCard
+                          key={post.node.fields.slug}
+                          post={post.node}
+                          large={index === 0}
+                        />
+                      )
+                    );
+                  })}
+              </div>
+            </article>
           </div>
         </main>
-        {props.children}
-        {props.pageContext.numPages > 1 && (
-          <Pagination
-            currentPage={props.pageContext.currentPage}
-            numPages={props.pageContext.numPages}
-          />
-        )}
         <Footer />
       </Wrapper>
     </IndexLayout>
   );
 };
 
-export const pageQuery = graphql`
-  query indexPageQuery($skip: Int!, $limit: Int!) {
-    logo: file(relativePath: { eq: "img/logo_initial2.png" }) {
+export const blogPageQuery = graphql`
+  query blogPageQuery {
+    logo: file(relativePath: { eq: "img/ghost-logo.png" }) {
       childImageSharp {
         fixed {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    header: file(relativePath: { eq: "img/blog-index.jpg" }) {
+    header: file(relativePath: { eq: "img/sugar_field.jpg" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
-    stripe1: file(relativePath: { eq: "img/person5.jpg" }) {
-      childImageSharp {
-        fixed(width: 2000, quality: 100) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    stripe2: file(relativePath: { eq: "img/ibague_field2.jpg" }) {
-      childImageSharp {
-        fixed(width: 2000, quality: 100) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    stripe3: file(relativePath: { eq: "img/CIAT.JPG" }) {
+    featureBackground: file(relativePath: { eq: "img/ibague.jpg" }) {
       childImageSharp {
         fixed(width: 2000, quality: 100) {
           ...GatsbyImageSharpFixed
@@ -215,8 +170,6 @@ export const pageQuery = graphql`
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
-      limit: $limit
-      skip: $skip
     ) {
       edges {
         node {
@@ -259,30 +212,18 @@ export const pageQuery = graphql`
   }
 `;
 
-const Logo = css`
-  height: 180px;
-
-  @media (max-width: 800px) {
-    height: 120px;
+const PageTemplate = css`
+  .site-main {
+    margin-top: 64px;
+    padding-bottom: 4vw;
+    background: #fff;
   }
 
-  @media (max-width: 500px) {
-    height: 80px;
-  }
-`;
-
-const IndexTitle = css`
-  margin-top: -5vh;
-  margin-bottom: -5vh;
-
-  @media (max-width: 800px) {
-    margin-top: -5vh;
-    margin-bottom: -3vh;
-  }
-
-  @media (max-width: 500px) {
-    margin-top: -10vh;
-    margin-bottom: -3vh;
+  @media (prefers-color-scheme: dark) {
+    .site-main {
+      /* background: var(--darkmode); */
+      background: ${colors.darkmode};
+    }
   }
 `;
 
@@ -344,4 +285,4 @@ const HomePosts = css`
   }
 `;
 
-export default IndexPage;
+export default ResearchPage;
